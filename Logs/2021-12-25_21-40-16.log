@@ -1,0 +1,188 @@
+21:40:16,798 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Log has been created and started
+21:40:16,798 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Metaclass MetaAbsLogger: Starting class MetaLogger
+21:40:16,801 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Metaclass MetaLogger: Starting class QuestionClass
+21:40:16,811 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Metaclass MetaLogger: Starting class QuestionnaireClass
+21:40:16,813 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Metaclass MetaAbsLogger: Starting class CurrentSession
+21:40:16,831 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Metaclass MetaAbsLogger: Starting class SimpleWindow
+21:40:16,846 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO C:\Users\ingov\PycharmProjects\ProjectR/Config/config.cfg, exists so we will read it
+21:40:16,847 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Seconds to answer a question: 10
+21:40:16,847 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Seconds between questions: 30
+21:40:16,847 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO C:\Users\ingov\PycharmProjects\ProjectR/Config/config.cfg is closed now
+21:40:16,847 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Metaclass MetaLogger: Starting class ConfigClass
+21:40:16,847 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Metaclass MetaAbsLogger: Starting class QuestionWindowAbs
+21:40:16,847 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Metaclass MetaAbsLogger: Starting class QuestionOneAnswer
+21:40:16,848 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Metaclass MetaAbsLogger: Starting class QuestionOneAnswerMultiple
+21:40:16,848 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Metaclass MetaAbsLogger: Starting class QuestionTwoAnswersMultiple
+21:40:16,848 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting into __init__ for class: QuestionClass
+21:40:16,848 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Attributes in args: ('What do you say to a person in the morning?', 'Good morning')
+21:40:16,848 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Attributes in kwargs: {}
+21:40:16,848 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Setting member: _QuestionClass__question to value=What do you say to a person in the morning?
+21:40:16,848 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Setting member: _QuestionClass__answers to value=Good morning
+21:40:16,848 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting into __init__ for class: QuestionOneAnswer
+21:40:16,848 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Attributes in args: ()
+21:40:16,848 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Attributes in kwargs: {'width': 600, 'height': 450, 'title': 'Question 3'}
+21:40:16,927 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Setting member: window to value=.
+21:40:16,927 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: window
+21:40:16,927 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Setting member: height to value=450
+21:40:16,927 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Setting member: width to value=600
+21:40:16,927 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: window
+21:40:16,927 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: window
+21:40:16,927 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: window
+21:40:16,932 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Setting member: menu to value=.!menu
+21:40:16,933 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: window
+21:40:16,933 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: menu
+21:40:16,937 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: menu
+21:40:16,937 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting method: go_back_to_main
+21:40:16,937 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: menu
+21:40:16,937 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: _QuestionClass__question
+21:40:16,937 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: question
+21:40:16,937 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: _QuestionClass__answers
+21:40:16,937 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: answers
+21:40:16,937 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Setting member: question to value=What do you say to a person in the morning?: Good morning
+21:40:16,937 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: window
+21:40:16,938 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: _QuestionClass__question
+21:40:16,938 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: question
+21:40:16,938 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Setting member: question_label to value=.!label
+21:40:16,938 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: question_label
+21:40:16,939 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: question_label
+21:40:16,939 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: window
+21:40:16,939 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting method: reveal_answer
+21:40:16,939 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Setting member: button_answer to value=.!button
+21:40:16,939 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: button_answer
+21:40:16,939 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Setting member: answer_label to value=None
+21:40:16,939 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: window
+21:40:18,378 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting into __init__ for class: QuestionClass
+21:40:18,378 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Attributes in args: ('What of the following ones are Python basic types?', [('Fire', False), ('Bool', True), ('Normal', False), ('Basic', False)])
+21:40:18,378 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Attributes in kwargs: {}
+21:40:18,379 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Setting member: _QuestionClass__question to value=What of the following ones are Python basic types?
+21:40:18,379 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Setting member: _QuestionClass__answers to value=[('Fire', False), ('Bool', True), ('Normal', False), ('Basic', False)]
+21:40:18,379 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting into __init__ for class: QuestionOneAnswerMultiple
+21:40:18,379 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Attributes in args: ()
+21:40:18,379 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Attributes in kwargs: {'width': 600, 'height': 550, 'title': 'Question 4'}
+21:40:18,455 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Setting member: window to value=.
+21:40:18,455 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: window
+21:40:18,455 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Setting member: height to value=550
+21:40:18,455 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Setting member: width to value=600
+21:40:18,455 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: window
+21:40:18,455 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: window
+21:40:18,455 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: window
+21:40:18,456 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Setting member: menu to value=.!menu
+21:40:18,456 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: window
+21:40:18,457 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: menu
+21:40:18,461 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: menu
+21:40:18,461 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting method: go_back_to_main
+21:40:18,461 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: menu
+21:40:18,461 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: _QuestionClass__question
+21:40:18,462 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: question
+21:40:18,462 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: _QuestionClass__answers
+21:40:18,462 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: answers
+21:40:18,462 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Setting member: question to value=What of the following ones are Python basic types?: [('Fire', False), ('Bool', True), ('Normal', False), ('Basic', False)]
+21:40:18,462 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: window
+21:40:18,462 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: _QuestionClass__question
+21:40:18,462 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: question
+21:40:18,462 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Setting member: question_label to value=.!label
+21:40:18,462 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: question_label
+21:40:18,463 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: question_label
+21:40:18,463 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Setting member: radio_buttons to value=[]
+21:40:18,463 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Setting member: answer_group to value=PY_VAR0
+21:40:18,463 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Setting member: radio_button_font to value=('TkDefaultFont', 12)
+21:40:18,463 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: question
+21:40:18,463 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: _QuestionClass__answers
+21:40:18,463 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: answers
+21:40:18,463 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: window
+21:40:18,463 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: answer_group
+21:40:18,463 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting method: reveal_result
+21:40:18,463 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: radio_button_font
+21:40:18,464 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: radio_buttons
+21:40:18,464 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: window
+21:40:18,464 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: answer_group
+21:40:18,464 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting method: reveal_result
+21:40:18,464 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: radio_button_font
+21:40:18,464 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: radio_buttons
+21:40:18,464 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: window
+21:40:18,465 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: answer_group
+21:40:18,465 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting method: reveal_result
+21:40:18,465 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: radio_button_font
+21:40:18,465 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: radio_buttons
+21:40:18,465 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: window
+21:40:18,465 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: answer_group
+21:40:18,465 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting method: reveal_result
+21:40:18,465 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: radio_button_font
+21:40:18,466 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: radio_buttons
+21:40:18,466 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: window
+21:40:19,215 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting into __init__ for class: QuestionClass
+21:40:19,216 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Attributes in args: ('Which of the following countries belong to the European Union', [('Serbia', False), ('Latvia', True), ('Norway', False), ('Malta', True)])
+21:40:19,216 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Attributes in kwargs: {}
+21:40:19,216 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Setting member: _QuestionClass__question to value=Which of the following countries belong to the European Union
+21:40:19,216 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Setting member: _QuestionClass__answers to value=[('Serbia', False), ('Latvia', True), ('Norway', False), ('Malta', True)]
+21:40:19,216 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting into __init__ for class: QuestionTwoAnswersMultiple
+21:40:19,216 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Attributes in args: ()
+21:40:19,216 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Attributes in kwargs: {'width': 600, 'height': 550, 'title': 'Question 5'}
+21:40:19,671 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Setting member: window to value=.
+21:40:19,671 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: window
+21:40:19,671 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Setting member: height to value=550
+21:40:19,672 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Setting member: width to value=600
+21:40:19,672 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: window
+21:40:19,672 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: window
+21:40:19,672 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: window
+21:40:19,674 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Setting member: menu to value=.!menu
+21:40:19,675 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: window
+21:40:19,675 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: menu
+21:40:19,700 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: menu
+21:40:19,701 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting method: go_back_to_main
+21:40:19,701 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: menu
+21:40:19,702 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: _QuestionClass__question
+21:40:19,702 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: question
+21:40:19,702 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: _QuestionClass__answers
+21:40:19,702 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: answers
+21:40:19,703 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Setting member: question to value=Which of the following countries belong to the European Union: [('Serbia', False), ('Latvia', True), ('Norway', False), ('Malta', True)]
+21:40:19,703 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: window
+21:40:19,703 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: _QuestionClass__question
+21:40:19,703 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: question
+21:40:19,705 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Setting member: question_label to value=.!label
+21:40:19,706 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: question_label
+21:40:19,707 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: question_label
+21:40:19,707 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Setting member: check_boxes to value=[]
+21:40:19,708 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Setting member: answer_group to value=PY_VAR1
+21:40:19,708 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Setting member: check_button_font to value=('TkDefaultFont', 12)
+21:40:19,708 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Setting member: checks_done to value=0
+21:40:19,709 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Setting member: vars_int to value=[]
+21:40:19,709 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: question
+21:40:19,709 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: _QuestionClass__answers
+21:40:19,709 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: answers
+21:40:19,710 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: window
+21:40:19,710 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: check_button_font
+21:40:19,710 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting method: checking_box
+21:40:19,712 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: vars_int
+21:40:19,712 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: check_boxes
+21:40:19,713 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: window
+21:40:19,713 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: check_button_font
+21:40:19,713 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting method: checking_box
+21:40:19,714 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: vars_int
+21:40:19,714 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: check_boxes
+21:40:19,715 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: window
+21:40:19,715 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: check_button_font
+21:40:19,715 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting method: checking_box
+21:40:19,721 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: vars_int
+21:40:19,722 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: check_boxes
+21:40:19,722 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: window
+21:40:19,722 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: check_button_font
+21:40:19,723 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting method: checking_box
+21:40:19,725 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: vars_int
+21:40:19,725 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: check_boxes
+21:40:19,725 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: window
+21:40:22,499 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: checks_done
+21:40:22,500 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Setting member: checks_done to value=1
+21:40:22,500 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: checks_done
+21:40:23,184 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: checks_done
+21:40:23,184 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Setting member: checks_done to value=2
+21:40:23,184 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: checks_done
+21:40:23,184 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: check_boxes
+21:40:23,184 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: vars_int
+21:40:23,184 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: vars_int
+21:40:23,184 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: vars_int
+21:40:23,184 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: vars_int
+21:40:23,289 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: vars_int
+21:40:23,289 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: vars_int
+21:40:23,289 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: vars_int
+21:40:23,289 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_21-40-16 INFO Getting attribute: vars_int

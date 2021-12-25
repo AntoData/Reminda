@@ -1,0 +1,30 @@
+20:28:57,882 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_20-28-57 INFO Log has been created and started
+20:28:57,882 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_20-28-57 INFO Metaclass MetaAbsLogger: Starting class MetaLogger
+20:28:57,894 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_20-28-57 INFO Metaclass MetaLogger: Starting class QuestionClass
+20:28:57,917 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_20-28-57 INFO Metaclass MetaLogger: Starting class QuestionnaireClass
+20:28:57,972 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_20-28-57 INFO Metaclass MetaAbsLogger: Starting class SimpleWindow
+20:28:58,2 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_20-28-57 INFO C:\Users\ingov\PycharmProjects\ProjectR/Config/config.cfg, exists so we will read it
+20:28:58,2 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_20-28-57 INFO Seconds to answer a question: 10
+20:28:58,2 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_20-28-57 INFO Seconds between questions: 30
+20:28:58,2 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_20-28-57 INFO C:\Users\ingov\PycharmProjects\ProjectR/Config/config.cfg is closed now
+20:28:58,2 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_20-28-57 INFO Metaclass MetaLogger: Starting class ConfigClass
+20:28:58,32 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_20-28-57 INFO Metaclass MetaAbsLogger: Starting class CurrentSession
+20:28:58,32 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_20-28-57 INFO Metaclass MetaAbsLogger: Starting class QuestionWindowAbs
+20:28:58,33 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_20-28-57 INFO Metaclass MetaAbsLogger: Starting class QuestionOneAnswer
+20:28:58,33 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_20-28-57 INFO Metaclass MetaAbsLogger: Starting class QuestionOneAnswerMultiple
+20:28:58,33 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_20-28-57 INFO Loading a questionnaire from file: C:\Users\ingov\PycharmProjects\ProjectR/Data/Questionnaires/QuestionnaireExample2.pickle
+20:28:58,33 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_20-28-57 INFO Getting attribute: __dict__
+20:28:58,33 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_20-28-57 INFO Getting attribute: __dict__
+20:28:58,33 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_20-28-57 INFO Getting attribute: __dict__
+20:28:58,33 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_20-28-57 INFO Calling get_secs_to_answer
+20:28:58,33 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_20-28-57 INFO Getting secs to answer a questions: 10
+20:28:58,33 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_20-28-57 INFO Getting method: get_question_type
+20:28:58,33 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_20-28-57 INFO Getting attribute: _QuestionClass__answers
+20:28:58,33 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_20-28-57 INFO Getting attribute: _QuestionClass__answers
+20:28:58,33 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_20-28-57 INFO Getting attribute: logger
+20:28:58,33 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_20-28-57 INFO This question is a multiple choice question with two answers: Checkboxes: value 2
+20:28:58,33 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_20-28-57 INFO Getting method: get_question_type
+20:28:58,33 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_20-28-57 INFO Getting attribute: _QuestionClass__answers
+20:28:58,33 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_20-28-57 INFO Getting attribute: _QuestionClass__answers
+20:28:58,33 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_20-28-57 INFO Getting attribute: logger
+20:28:58,33 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_20-28-57 INFO This question is a multiple choice question with two answers: Checkboxes: value 2

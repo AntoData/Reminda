@@ -1,0 +1,41 @@
+20:23:11,779 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-24_20-23-11 INFO Log has been created and started
+20:23:11,779 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-24_20-23-11 INFO Metaclass MetaAbsLogger: Starting class MetaLogger
+20:23:11,780 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-24_20-23-11 INFO Metaclass MetaLogger: Starting class QuestionClass
+20:23:11,789 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-24_20-23-11 INFO Metaclass MetaLogger: Starting class QuestionnaireClass
+20:23:11,809 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-24_20-23-11 INFO Metaclass MetaAbsLogger: Starting class SimpleWindow
+20:23:11,859 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-24_20-23-11 INFO C:\Users\ingov\PycharmProjects\ProjectR/Config/config.cfg, exists so we will read it
+20:23:11,859 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-24_20-23-11 INFO Seconds to answer a question: 10
+20:23:11,859 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-24_20-23-11 INFO Seconds between questions: 30
+20:23:11,859 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-24_20-23-11 INFO C:\Users\ingov\PycharmProjects\ProjectR/Config/config.cfg is closed now
+20:23:11,859 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-24_20-23-11 INFO Metaclass MetaLogger: Starting class ConfigClass
+20:23:11,859 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-24_20-23-11 INFO Metaclass MetaAbsLogger: Starting class QuestionWindowAbs
+20:23:11,859 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-24_20-23-11 INFO Metaclass MetaAbsLogger: Starting class QuestionOneAnswer
+20:23:11,859 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-24_20-23-11 INFO Getting into __init__ for class: QuestionClass
+20:23:11,859 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-24_20-23-11 INFO Attributes in args: ('What do you say to a person in the morning?', 'Good morning')
+20:23:11,859 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-24_20-23-11 INFO Attributes in kwargs: {}
+20:23:11,859 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-24_20-23-11 INFO Setting member: _QuestionClass__question to value=What do you say to a person in the morning?
+20:23:11,859 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-24_20-23-11 INFO Setting member: _QuestionClass__answers to value=Good morning
+20:23:11,859 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-24_20-23-11 INFO Getting into __init__ for class: QuestionOneAnswer
+20:23:11,859 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-24_20-23-11 INFO Attributes in args: (500, 600, 'Question 3')
+20:23:11,859 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-24_20-23-11 INFO Attributes in kwargs: {}
+20:23:11,939 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-24_20-23-11 INFO Setting member: window to value=.
+20:23:11,939 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-24_20-23-11 INFO Getting attribute: window
+20:23:11,939 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-24_20-23-11 INFO Setting member: height to value=500
+20:23:11,939 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-24_20-23-11 INFO Setting member: width to value=600
+20:23:11,939 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-24_20-23-11 INFO Getting attribute: window
+20:23:11,939 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-24_20-23-11 INFO Getting attribute: window
+20:23:11,939 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-24_20-23-11 INFO Getting attribute: _QuestionClass__question
+20:23:11,939 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-24_20-23-11 INFO Getting attribute: question
+20:23:11,939 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-24_20-23-11 INFO Getting attribute: _QuestionClass__answers
+20:23:11,939 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-24_20-23-11 INFO Getting attribute: answers
+20:23:11,939 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-24_20-23-11 INFO Setting member: question to value=What do you say to a person in the morning?: Good morning
+20:23:11,939 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-24_20-23-11 INFO Getting attribute: window
+20:23:11,939 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-24_20-23-11 INFO Setting member: question_label to value=.!label
+20:23:11,939 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-24_20-23-11 INFO Getting attribute: question_label
+20:23:11,939 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-24_20-23-11 INFO Getting attribute: question_label
+20:23:11,939 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-24_20-23-11 INFO Getting attribute: window
+20:23:11,939 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-24_20-23-11 INFO Getting method: reveal_answer
+20:23:11,939 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-24_20-23-11 INFO Setting member: button_answer to value=.!button
+20:23:11,939 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-24_20-23-11 INFO Getting attribute: button_answer
+20:23:11,939 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-24_20-23-11 INFO Setting member: answer_label to value=None
+20:23:11,939 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-24_20-23-11 INFO Getting attribute: window

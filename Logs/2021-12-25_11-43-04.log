@@ -1,0 +1,34 @@
+11:43:04,309 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_11-43-04 INFO Log has been created and started
+11:43:04,311 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_11-43-04 INFO Metaclass MetaAbsLogger: Starting class MetaLogger
+11:43:04,311 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_11-43-04 INFO Metaclass MetaLogger: Starting class QuestionClass
+11:43:04,321 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_11-43-04 INFO Metaclass MetaLogger: Starting class QuestionnaireClass
+11:43:04,341 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_11-43-04 INFO Metaclass MetaAbsLogger: Starting class SimpleWindow
+11:43:04,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_11-43-04 INFO C:\Users\ingov\PycharmProjects\ProjectR/Config/config.cfg, exists so we will read it
+11:43:04,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_11-43-04 INFO Seconds to answer a question: 10
+11:43:04,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_11-43-04 INFO Seconds between questions: 30
+11:43:04,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_11-43-04 INFO C:\Users\ingov\PycharmProjects\ProjectR/Config/config.cfg is closed now
+11:43:04,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_11-43-04 INFO Metaclass MetaLogger: Starting class ConfigClass
+11:43:04,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_11-43-04 INFO Metaclass MetaAbsLogger: Starting class QuestionWindowAbs
+11:43:04,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_11-43-04 INFO Metaclass MetaAbsLogger: Starting class QuestionOneAnswer
+11:43:04,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_11-43-04 INFO Getting into __init__ for class: QuestionClass
+11:43:04,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_11-43-04 INFO Attributes in args: ('What do you say to a person in the morning?', 'Good morning')
+11:43:04,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_11-43-04 INFO Attributes in kwargs: {}
+11:43:04,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_11-43-04 INFO Setting member: _QuestionClass__question to value=What do you say to a person in the morning?
+11:43:04,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_11-43-04 INFO Setting member: _QuestionClass__answers to value=Good morning
+11:43:04,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_11-43-04 INFO Getting into __init__ for class: QuestionOneAnswer
+11:43:04,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_11-43-04 INFO Attributes in args: ()
+11:43:04,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_11-43-04 INFO Attributes in kwargs: {'width': 600, 'height': 450, 'title': 'Question 3'}
+11:43:04,431 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_11-43-04 INFO Setting member: window to value=.
+11:43:04,431 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_11-43-04 INFO Getting attribute: window
+11:43:04,431 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_11-43-04 INFO Setting member: height to value=450
+11:43:04,431 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_11-43-04 INFO Setting member: width to value=600
+11:43:04,431 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_11-43-04 INFO Getting attribute: window
+11:43:04,431 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_11-43-04 INFO Getting attribute: window
+11:43:04,431 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_11-43-04 INFO Getting attribute: window
+11:43:04,437 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_11-43-04 INFO Setting member: menu to value=.!menu
+11:43:04,437 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_11-43-04 INFO Getting attribute: window
+11:43:04,437 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_11-43-04 INFO Getting attribute: menu
+11:43:04,441 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_11-43-04 INFO Getting attribute: menu
+11:43:04,441 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_11-43-04 INFO Setting member: first_level to value=.!menu.!menu
+11:43:04,441 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_11-43-04 INFO Getting attribute: menu
+11:43:04,441 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_11-43-04 INFO Getting attribute: first_level
