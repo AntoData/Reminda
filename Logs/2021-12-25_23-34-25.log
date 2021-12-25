@@ -1,0 +1,126 @@
+23:34:25,201 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Log has been created and started
+23:34:25,201 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Metaclass MetaAbsLogger: Starting class MetaLogger
+23:34:25,217 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Metaclass MetaLogger: Starting class QuestionClass
+23:34:25,217 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Metaclass MetaLogger: Starting class QuestionnaireClass
+23:34:25,232 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Metaclass MetaAbsLogger: Starting class SimpleWindow
+23:34:25,248 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO C:\Users\ingov\PycharmProjects\ProjectR/Config/config.cfg, exists so we will read it
+23:34:25,248 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Seconds to answer a question: 10
+23:34:25,248 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Seconds between questions: 30
+23:34:25,248 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO C:\Users\ingov\PycharmProjects\ProjectR/Config/config.cfg is closed now
+23:34:25,248 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Metaclass MetaLogger: Starting class ConfigClass
+23:34:25,264 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Metaclass MetaAbsLogger: Starting class CurrentSession
+23:34:25,264 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Metaclass MetaAbsLogger: Starting class QuestionWindowAbs
+23:34:25,264 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Metaclass MetaAbsLogger: Starting class QuestionOneAnswer
+23:34:25,264 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Metaclass MetaAbsLogger: Starting class QuestionOneAnswerMultiple
+23:34:25,264 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Metaclass MetaAbsLogger: Starting class QuestionTwoAnswersMultiple
+23:34:25,264 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Loading a questionnaire from file: C:\Users\ingov\PycharmProjects\ProjectR/Data/Questionnaires/QuestionnaireExample2.pickle
+23:34:25,264 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting attribute: __dict__
+23:34:25,264 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting attribute: __dict__
+23:34:25,264 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting attribute: __dict__
+23:34:25,264 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Calling get_secs_to_answer
+23:34:25,264 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting secs to answer a questions: 10
+23:34:25,264 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting method: get_question_type
+23:34:25,264 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting attribute: _QuestionClass__answers
+23:34:25,264 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting attribute: _QuestionClass__answers
+23:34:25,264 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting attribute: logger
+23:34:25,264 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO This question is a multiple choice question with a single answer: Radio button: value 1
+23:34:25,264 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting method: get_question_type
+23:34:25,264 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting attribute: _QuestionClass__answers
+23:34:25,264 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting attribute: _QuestionClass__answers
+23:34:25,264 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting attribute: logger
+23:34:25,264 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO This question is a multiple choice question with a single answer: Radio button: value 1
+23:34:25,264 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting attribute: logger
+23:34:25,264 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting attribute: _QuestionClass__question
+23:34:25,264 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting attribute: question
+23:34:25,264 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting attribute: _QuestionClass__answers
+23:34:25,264 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting attribute: answers
+23:34:25,264 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO We are going to display question: What of the following ones are Python basic types?: [('Fire', False), ('Bool', True), ('Normal', False), ('Basic', False)]
+23:34:25,264 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting into __init__ for class: QuestionOneAnswerMultiple
+23:34:25,264 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Attributes in args: ()
+23:34:25,264 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Attributes in kwargs: {'width': 600, 'height': 550, 'title': 'Question 0'}
+23:34:25,342 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Setting member: window to value=.
+23:34:25,342 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting attribute: window
+23:34:25,342 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Setting member: height to value=550
+23:34:25,342 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Setting member: width to value=600
+23:34:25,342 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting attribute: window
+23:34:25,342 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting attribute: window
+23:34:25,342 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting attribute: logger
+23:34:25,342 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Set window to no resizable
+23:34:25,342 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting attribute: window
+23:34:25,342 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Setting member: menu to value=.!menu
+23:34:25,342 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting attribute: logger
+23:34:25,342 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Creating menu for this window
+23:34:25,342 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting attribute: window
+23:34:25,342 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting attribute: menu
+23:34:25,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting attribute: menu
+23:34:25,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting method: go_back_to_main
+23:34:25,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting attribute: logger
+23:34:25,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Added option Go back to main
+23:34:25,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting attribute: menu
+23:34:25,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting attribute: logger
+23:34:25,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Added option Exit
+23:34:25,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting attribute: _QuestionClass__question
+23:34:25,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting attribute: question
+23:34:25,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting attribute: _QuestionClass__answers
+23:34:25,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting attribute: answers
+23:34:25,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Setting member: question to value=What of the following ones are Python basic types?: [('Fire', False), ('Bool', True), ('Normal', False), ('Basic', False)]
+23:34:25,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting attribute: window
+23:34:25,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting attribute: _QuestionClass__question
+23:34:25,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting attribute: question
+23:34:25,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Setting member: question_label to value=.!label
+23:34:25,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting attribute: question_label
+23:34:25,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting attribute: question_label
+23:34:25,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting attribute: logger
+23:34:25,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Created label for the question
+23:34:25,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Setting member: radio_buttons to value=[]
+23:34:25,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting attribute: logger
+23:34:25,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO We created the IntVar for the group of radio buttons
+23:34:25,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Setting member: answer_group to value=PY_VAR0
+23:34:25,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting attribute: logger
+23:34:25,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Our font is size 12
+23:34:25,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Setting member: radio_button_font to value=('TkDefaultFont', 12)
+23:34:25,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting attribute: question
+23:34:25,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting attribute: _QuestionClass__answers
+23:34:25,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting attribute: answers
+23:34:25,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting attribute: logger
+23:34:25,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Creating radio button
+23:34:25,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting attribute: window
+23:34:25,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting attribute: answer_group
+23:34:25,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting method: reveal_result
+23:34:25,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting attribute: radio_button_font
+23:34:25,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting attribute: radio_buttons
+23:34:25,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting attribute: logger
+23:34:25,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Creating radio button
+23:34:25,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting attribute: window
+23:34:25,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting attribute: answer_group
+23:34:25,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting method: reveal_result
+23:34:25,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting attribute: radio_button_font
+23:34:25,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting attribute: radio_buttons
+23:34:25,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting attribute: logger
+23:34:25,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Creating radio button
+23:34:25,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting attribute: window
+23:34:25,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting attribute: answer_group
+23:34:25,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting method: reveal_result
+23:34:25,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting attribute: radio_button_font
+23:34:25,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting attribute: radio_buttons
+23:34:25,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting attribute: logger
+23:34:25,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Creating radio button
+23:34:25,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting attribute: window
+23:34:25,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting attribute: answer_group
+23:34:25,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting method: reveal_result
+23:34:25,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting attribute: radio_button_font
+23:34:25,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting attribute: radio_buttons
+23:34:25,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting attribute: window
+23:34:25,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting attribute: window
+23:34:25,357 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting attribute: window
+23:34:27,336 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting attribute: logger
+23:34:27,336 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Revealing the correct answer
+23:34:27,336 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting attribute: logger
+23:34:27,336 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Disabling all the radio buttons
+23:34:27,336 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting attribute: radio_buttons
+23:34:27,336 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting attribute: answer_group
+23:34:27,336 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting attribute: logger
+23:34:27,352 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Answer was True
+23:34:27,352 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting attribute: window
+23:34:35,359 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Calling get_secs_between_questions
+23:34:35,359 C:\Users\ingov\PycharmProjects\ProjectR/Logs/2021-12-25_23-34-25 INFO Getting secs between questions: 10

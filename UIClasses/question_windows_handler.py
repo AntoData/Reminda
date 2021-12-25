@@ -15,6 +15,7 @@ from question_windows import *
 
 class QuestionnaireWindowHandler:
     window_question_object = None
+
     @classmethod
     def handler_question_windows(cls):
         cls.window_question_object.window.destroy()
@@ -34,7 +35,7 @@ class QuestionnaireWindowHandler:
             elif question.get_question_type() == 1:
                 QuestionnaireWindowHandler.window_question_object = QuestionOneAnswerMultiple(question, i)
             else:
-                QuestionnaireWindowHandler.window_question_object = QuestionOneAnswerMultiple(question, i)
+                QuestionnaireWindowHandler.window_question_object = QuestionTwoAnswersMultiple(question, i)
             if i < len(self.questionnaire) - 1:
                 QuestionnaireWindowHandler.window_question_object.window.after(
                     self.secs_to_answer*1000, QuestionnaireWindowHandler.window_question_object.window.destroy)
@@ -45,7 +46,6 @@ class QuestionnaireWindowHandler:
                     self.secs_to_answer * 1000, QuestionnaireWindowHandler.window_question_object.window.destroy)
                 QuestionnaireWindowHandler.window_question_object.window.mainloop()
             i += 1
-
 
 
 if __name__ == "__main__":
