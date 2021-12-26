@@ -3,6 +3,7 @@ import time
 sys.path.append("../BE-Logic")
 sys.path.append("../Config")
 from Questionnaire import QuestionnaireClass
+from Current_session import CurrentSession
 from QuestionLogic import QuestionClass
 import LoggerMeta
 from window_design import SimpleWindow
@@ -46,6 +47,7 @@ class QuestionnaireWindowHandler:
                     self.secs_to_answer * 1000, QuestionnaireWindowHandler.window_question_object.window.destroy)
                 QuestionnaireWindowHandler.window_question_object.window.mainloop()
             i += 1
+            print(CurrentSession.current_session)
 
 
 if __name__ == "__main__":

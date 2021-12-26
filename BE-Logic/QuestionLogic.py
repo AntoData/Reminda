@@ -48,7 +48,7 @@ class QuestionClass(metaclass=LoggerMeta.MetaLogger):
         return self.__question
 
     def __str__(self) -> str:
-        return "{0}: {1}".format(self.question,self.answers)
+        return "{0}: {1}".format(self.question, self.answers)
 
 
 if __name__ == "__main__":
@@ -67,7 +67,7 @@ if __name__ == "__main__":
                                                                                          ("Norway", False),
                                                                                          ("Malta", True)])
     assert q2.get_question_type() == 2
-    assert q2.get_correct_answers() == ["Latvia","Malta"]
+    assert q2.get_correct_answers() == ["Latvia", "Malta"]
     assert q2.question == "Which of the following countries belong to the European Union"
     try:
         q3 = QuestionClass("What of the following are Python basic type", [("Bool", True), ("Integer", True),
