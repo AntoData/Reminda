@@ -12,9 +12,11 @@ from tkinter import ttk
 import os
 import Config.ConfigLogicClass
 from question_windows import *
+from execution_summary import ExecutionSummary
 
 
-class QuestionnaireWindowHandler:
+@LoggerMeta.class_decorator_logger("INFO")
+class QuestionnaireWindowHandler(metaclass=LoggerMeta.MetaLogger):
     window_question_object = None
 
     @classmethod
@@ -23,34 +25,57 @@ class QuestionnaireWindowHandler:
         time.sleep(Config.ConfigLogicClass.ConfigClass.get_secs_between_questions())
 
     def __init__(self, filename: str):
+        self.logger.info("Opening file {0}".format(filename))
         self.filename: str = filename.replace(".pickle", "")
-        print(self.filename)
         self.questionnaire: QuestionnaireClass = QuestionnaireClass.\
             load_questionnaire(filename)
+        self.logger.info("Loading questionnaire from file {0}".format(filename))
         self.questionnaire.shuffle()
+        self.logger.info("Questions have been shuffled")
         self.secs_to_answer: int = Config.ConfigLogicClass.ConfigClass.get_secs_to_answer()
-        i: int = 0
+        self.logger.info("We got the seconds to answer a question {0}".format(self.secs_to_answer))
+        i: int = 1
+        self.logger.info("We go through every question in the questionnaire")
         for question in self.questionnaire:
             if question.get_question_type() == 0:
+                self.logger.info("Question {0} is type 0".format(i))
                 QuestionnaireWindowHandler.window_question_object = QuestionOneAnswer(question, i)
+                self.logger.info("Created window from class QuestionOneAnswer")
             elif question.get_question_type() == 1:
+                self.logger.info("Question {0} is type 1".format(i))
                 QuestionnaireWindowHandler.window_question_object = QuestionOneAnswerMultiple(question, i)
+                self.logger.info("Created window from class QuestionOneAnswerMultiple")
             else:
+                self.logger.info("Question {0} is type 2".format(i))
                 QuestionnaireWindowHandler.window_question_object = QuestionTwoAnswersMultiple(question, i)
-            if i < len(self.questionnaire) - 1:
-                QuestionnaireWindowHandler.window_question_object.window.after(
-                    self.secs_to_answer*1000, QuestionnaireWindowHandler.window_question_object.window.destroy)
-                QuestionnaireWindowHandler.window_question_object.window.mainloop()
+                self.logger.info("Created window from class QuestionTwoAnswersMultiple")
+            QuestionnaireWindowHandler.window_question_object.window.after(
+                self.secs_to_answer * 1000, QuestionnaireWindowHandler.window_question_object.window.destroy)
+            self.logger.info("We set the window to be destroyed after {0} seconds using after".format(
+                self.secs_to_answer))
+            QuestionnaireWindowHandler.window_question_object.window.lift()
+            QuestionnaireWindowHandler.window_question_object.window.attributes("-topmost", True)
+            self.logger.info("We make the window the primary focus")
+            QuestionnaireWindowHandler.window_question_object.window.mainloop()
+            self.logger.info("We display the window")
+            if i < len(self.questionnaire):
+                self.logger.info("As it is not the last question, we sleep for {0}".format(
+                    Config.ConfigLogicClass.ConfigClass.get_secs_between_questions()))
                 time.sleep(Config.ConfigLogicClass.ConfigClass.get_secs_between_questions())
             else:
-                QuestionnaireWindowHandler.window_question_object.window.after(
-                    self.secs_to_answer * 1000, QuestionnaireWindowHandler.window_question_object.window.destroy)
-                QuestionnaireWindowHandler.window_question_object.window.mainloop()
+                pass
             i += 1
-            print(CurrentSession.current_session)
+            if question.question not in CurrentSession.current_session.keys():
+                self.logger.info("If we did not answer the question, we added it to the execution list as None")
+                CurrentSession.current_session[question.question] = None
+        self.logger.info("We finished the questionnaire")
+        summary: ExecutionSummary = ExecutionSummary()
+        self.logger.info("We created an execution summary window")
+        CurrentSession.delete_session()
+        self.logger.info("We don´t need the information about the current execution anymore, so we delete it")
+        self.logger.info("We display the execution window")
+        summary.window.mainloop()
 
 
 if __name__ == "__main__":
     c = QuestionnaireWindowHandler("QuestionnaireExample2")
-
-

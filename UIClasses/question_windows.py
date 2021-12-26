@@ -148,7 +148,7 @@ class QuestionOneAnswerMultiple(QuestionWindowAbs):
 
 class QuestionTwoAnswersMultiple(QuestionWindowAbs):
     def checking_box(self):
-        self.checks_done += 1
+        self.checks_done = sum([v.get() for v in self.vars_int])
         self.logger.info("We have checked {0} boxes already".format(self.checks_done))
         checked_answers: [str] = []
         correct: bool = True
