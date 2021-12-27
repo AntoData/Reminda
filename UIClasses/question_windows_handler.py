@@ -72,7 +72,7 @@ class QuestionnaireWindowHandler(metaclass=LoggerMeta.MetaLogger):
         summary: ExecutionSummary = ExecutionSummary()
         self.logger.info("We created an execution summary window")
         CurrentSession.delete_session()
-        self.logger.info("We don´t need the information about the current execution anymore, so we delete it")
+        self.logger.info("We don´t need the information about the current execution anymore, so we deleted it")
         self.logger.info("We display the execution window")
         summary.window.mainloop()
 
