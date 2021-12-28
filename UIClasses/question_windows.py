@@ -57,7 +57,7 @@ class QuestionWindowAbs(SimpleWindow, abc.ABC):
         label = tk.Label(obj.window, background=colour, foreground="#FFFFFF", text=message,
                          font=("Century", 15, "bold"))
         label.pack()
-        obj.window.after_cancel(obj.window)
+        obj.window.after_cancel(obj.func_after)
         obj.window.after(10000, obj.window.destroy)
 
 
@@ -71,7 +71,7 @@ class QuestionOneAnswer(QuestionWindowAbs):
         self.button_failed["state"] = tk.DISABLED
         self.button_failed["background"] = "#DDDEDD"
         self.logger.info("Removing after method from window")
-        self.window.after_cancel(self.window)
+        self.window.after_cancel(self.func_after)
         self.logger.info("Window will close in 10 secs")
         self.window.after(10000, self.window.destroy)
 

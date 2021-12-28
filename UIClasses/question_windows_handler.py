@@ -49,7 +49,7 @@ class QuestionnaireWindowHandler(metaclass=LoggerMeta.MetaLogger):
                 self.logger.info("Question {0} is type 2".format(i))
                 QuestionnaireWindowHandler.window_question_object = QuestionTwoAnswersMultiple(question, i)
                 self.logger.info("Created window from class QuestionTwoAnswersMultiple")
-            QuestionnaireWindowHandler.window_question_object.window.after(
+            QuestionnaireWindowHandler.window_question_object.func_after = QuestionnaireWindowHandler.window_question_object.window.after(
                 self.secs_to_answer * 1000, QuestionnaireWindowHandler.window_question_object.window.destroy)
             self.logger.info("We set the window to be destroyed after {0} seconds using after".format(
                 self.secs_to_answer))
@@ -78,4 +78,4 @@ class QuestionnaireWindowHandler(metaclass=LoggerMeta.MetaLogger):
 
 
 if __name__ == "__main__":
-    c = QuestionnaireWindowHandler("QuestionnaireExample2")
+    c = QuestionnaireWindowHandler("Example")

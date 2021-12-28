@@ -1,5 +1,4 @@
 from __future__ import annotations
-
 import sys
 sys.path.append("../BE-Logic")
 sys.path.append("../Config")
@@ -11,6 +10,8 @@ import tkinter as tk
 
 
 class QuestionCreation(SimpleWindow):
+    exit: bool = False
+
     def question_filled(self):
         return self.question_text.get("0.0", tk.END).translate(str.maketrans('', '', ' \n\t\r')) != ""
 
@@ -43,7 +44,7 @@ class QuestionCreation(SimpleWindow):
         self.frame2 = tk.Frame(self.window)
         self.frame2.pack()
         self.button_save = tk.Button(self.frame2, text="Save", state=tk.DISABLED, command=self.button_save_handler)
-        self.button_exit = tk.Button(self.frame2, text="Exit")
+        self.button_exit = tk.Button(self.frame2, text="Exit", command=self.button_exit_handler)
         self.button_save.grid(row=0, column=0)
         self.button_exit.grid(row=0, column=1)
 
@@ -104,7 +105,7 @@ class QuestionCreation(SimpleWindow):
             self.button_save["state"] = tk.NORMAL
         else:
             self.button_save["state"] = tk.DISABLED
-        self.question_text.after(1, self.check_button_save_question)
+        self.after_func = self.question_text.after(1, self.check_button_save_question)
 
     def gather_answers(self):
         answers_str: (str | [(str, bool)]) = []
@@ -121,7 +122,12 @@ class QuestionCreation(SimpleWindow):
         answers_str: str | [(str, bool)] = self.gather_answers()
         question_str: str = self.question_text.get("1.0", "end-1c").strip()
         self.question_result = QuestionClass(question_str, answers_str)
-        print(self.question_result)
+        self.question_text.after_cancel(self.after_func)
+        self.window.destroy()
+
+    def button_exit_handler(self):
+        QuestionCreation.exit = True
+        self.question_text.after_cancel(self.after_func)
         self.window.destroy()
 
     def __init__(self, title):
@@ -131,7 +137,7 @@ class QuestionCreation(SimpleWindow):
         self.question_label: tk.Label = tk.Label(self.window, text="Question", font=self.font)
         self.question_label.pack()
         self.question_text: tk.Text = tk.Text(self.window, width=57, height=7)
-        self.question_text.after(1, self.check_button_save_question)
+        self.after_func = self.question_text.after(1, self.check_button_save_question)
         self.question_text.pack()
         tk.Frame(self.window, height=20).pack()
         self.answer_stringVar = tk.StringVar("")
@@ -153,6 +159,7 @@ class QuestionCreation(SimpleWindow):
         self.answers = None
         self.intVars = None
         self.question_result: QuestionClass = None
+        self.after_func = None
         self.single_answer_display()
 
 
