@@ -1,6 +1,8 @@
 from datetime import datetime
 import os
 import abc
+from logging.handlers import RotatingFileHandler
+
 
 
 class MetaAbsLogger(abc.ABCMeta):
@@ -23,11 +25,17 @@ class MetaAbsLogger(abc.ABCMeta):
             now = datetime.now()
             filename: str = now.strftime("%Y-%m-%d_%H-%M-%S")
             filename = "{0}/Logs/{1}".format(MetaAbsLogger.get_root(), filename)
-            logging.basicConfig(filename="{0}.log".format(filename),
-                                filemode='a',
-                                format='%(asctime)s,%(msecs)d %(name)s %(levelname)s %(message)s',
+            rfh = RotatingFileHandler(
+                filename="{0}.log".format(filename),
+                mode='a',
+                maxBytes=2 * 1024 * 1024,
+                backupCount=2,
+                encoding=None,
+                delay=0)
+            logging.basicConfig(format='%(asctime)s,%(msecs)d %(name)s %(levelname)s %(message)s',
                                 datefmt='%H:%M:%S',
-                                level=logging.INFO)
+                                level=logging.INFO,
+                                handlers=[rfh])
             MetaAbsLogger.logger = logging.getLogger(str(filename))
             MetaAbsLogger.logger.info("Log has been created and started")
         obj.logger = MetaAbsLogger.logger
