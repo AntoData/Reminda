@@ -175,6 +175,16 @@ class QuestionCreation(SimpleWindow):
         self.logger.info("We clicked the button Show -")
         self.logger.info("We change the label Answers to Answer")
         self.answer_stringVar.set("Answer")
+        self.logger.info("We set all the lists to None")
+        if self.check_boxes is not None:
+            self.check_boxes.clear()
+            self.check_boxes = None
+        if self.answers is not None:
+            self.answers.clear()
+            self.answers = None
+        if self.intVars is not None:
+            self.intVars.clear()
+            self.intVars = None
         self.logger.info("We destroy the frames with the entries, check buttons, buttons...")
         self.frame.destroy()
         self.frame2.destroy()
