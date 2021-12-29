@@ -10,6 +10,7 @@ from window_design import SimpleWindow
 import tkinter as tk
 from question_creation import QuestionCreation
 
+
 class QuestionCreationHandler(metaclass=LoggerMeta.MetaLogger):
     window_question_object = None
 

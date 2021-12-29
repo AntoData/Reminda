@@ -96,6 +96,7 @@ class QuestionCreation(SimpleWindow):
         self.button_less.grid(row=0, column=3)
 
     def show_less_handler(self):
+        self.answer_stringVar.set("Answer")
         self.frame.destroy()
         self.frame2.destroy()
         self.single_answer_display()
