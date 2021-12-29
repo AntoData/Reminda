@@ -192,14 +192,10 @@ class QuestionCreation(SimpleWindow):
         self.single_answer_display()
 
     def check_button_save_question(self):
-        self.logger.info("We check if the conditions to enable the button Save are true")
         if self.question_filled() and self.check_correct_number_checked() and self.all_answers_filled_in():
-            self.logger.info("They are true so we enable the button")
             self.button_save["state"] = tk.NORMAL
         else:
-            self.logger.info("They are false, we disable the button")
             self.button_save["state"] = tk.DISABLED
-        self.logger.info("We add this same function to the textarea for the question to be executed after 1 ns")
         self.after_func = self.question_text.after(1, self.check_button_save_question)
 
     def gather_answers(self):
@@ -235,8 +231,12 @@ class QuestionCreation(SimpleWindow):
         self.window.destroy()
 
     def button_exit_handler(self):
+        self.logger.info("We clicked the button Exit")
+        self.logger.info("We set the flat Exit to True")
         QuestionCreation.exit = True
+        self.logger.info("Remove all after calls")
         self.question_text.after_cancel(self.after_func)
+        self.logger.info("We destroy the window")
         self.window.destroy()
 
     def __init__(self, title):
