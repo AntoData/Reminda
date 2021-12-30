@@ -6,8 +6,7 @@ from window_design import SimpleWindow
 import tkinter as tk
 from tkinter import ttk
 import os
-from question_windows_handler import QuestionnaireWindowHandler
-from Questionnaire import QuestionnaireClass
+import question_windows_handler
 
 
 @LoggerMeta.class_decorator_logger("INFO")
@@ -15,7 +14,7 @@ class LoadQuestionnaire(SimpleWindow):
     def command(self):
         filename: str = self.combo.get().replace(".pickle","")
         self.window.destroy()
-        q = QuestionnaireWindowHandler(filename)
+        q = question_windows_handler.QuestionnaireWindowHandler(filename)
 
     def __init__(self):
         SimpleWindow.__init__(self, 60, 150, "New Window")

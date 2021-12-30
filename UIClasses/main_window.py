@@ -3,7 +3,7 @@ import sys
 sys.path.append("../BE-Logic")
 sys.path.append("../Config")
 import LoggerMeta
-from load_questions_window import LoadQuestionnaire
+import load_questions_window
 from create_questionnaire_start import CreateQuestionnaire
 from window_design import SimpleWindow
 from config_pop_up import ConfigPopUp
@@ -21,7 +21,7 @@ class MainWindow(SimpleWindow):
 
     def button_load_handler(self):
         self.window.destroy()
-        load = LoadQuestionnaire()
+        load = load_questions_window.LoadQuestionnaire()
         load.window.mainloop()
 
     @staticmethod

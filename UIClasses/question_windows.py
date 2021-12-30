@@ -12,13 +12,14 @@ import tkinter as tk
 from tkinter import ttk
 import os
 import Config.ConfigLogicClass
+import main_window
 
 
 @LoggerMeta.class_decorator_logger("INFO")
 class QuestionWindowAbs(SimpleWindow, abc.ABC):
-    """TO DO"""
     def go_back_to_main(self):
-        print("HELLO")
+        self.window.destroy()
+        main_window.MainWindow().window.mainloop()
 
     @abc.abstractmethod
     def __init__(self, question: QuestionClass, i: int, width: int, height: int):

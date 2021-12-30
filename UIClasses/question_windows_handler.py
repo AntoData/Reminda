@@ -6,12 +6,11 @@ from Questionnaire import QuestionnaireClass
 from Current_session import CurrentSession
 from QuestionLogic import QuestionClass
 import LoggerMeta
-from window_design import SimpleWindow
 import tkinter as tk
 from tkinter import ttk
 import os
 import Config.ConfigLogicClass
-from question_windows import *
+import question_windows
 from execution_summary import ExecutionSummary
 
 
@@ -39,15 +38,15 @@ class QuestionnaireWindowHandler(metaclass=LoggerMeta.MetaLogger):
         for question in self.questionnaire:
             if question.get_question_type() == 0:
                 self.logger.info("Question {0} is type 0".format(i))
-                QuestionnaireWindowHandler.window_question_object = QuestionOneAnswer(question, i)
+                QuestionnaireWindowHandler.window_question_object = question_windows.QuestionOneAnswer(question, i)
                 self.logger.info("Created window from class QuestionOneAnswer")
             elif question.get_question_type() == 1:
                 self.logger.info("Question {0} is type 1".format(i))
-                QuestionnaireWindowHandler.window_question_object = QuestionOneAnswerMultiple(question, i)
+                QuestionnaireWindowHandler.window_question_object = question_windows.QuestionOneAnswerMultiple(question, i)
                 self.logger.info("Created window from class QuestionOneAnswerMultiple")
             else:
                 self.logger.info("Question {0} is type 2".format(i))
-                QuestionnaireWindowHandler.window_question_object = QuestionTwoAnswersMultiple(question, i)
+                QuestionnaireWindowHandler.window_question_object = question_windows.QuestionTwoAnswersMultiple(question, i)
                 self.logger.info("Created window from class QuestionTwoAnswersMultiple")
             QuestionnaireWindowHandler.window_question_object.func_after = QuestionnaireWindowHandler.window_question_object.window.after(
                 self.secs_to_answer * 1000, QuestionnaireWindowHandler.window_question_object.window.destroy)

@@ -241,9 +241,11 @@ class QuestionCreation(SimpleWindow):
         self.logger.info("We destroy the window")
         self.window.destroy()
 
+
     def __init__(self, title):
         self.logger.info("We create a 600x500 SimpleWindow")
         SimpleWindow.__init__(self, 600, 500, title)
+        self.window.protocol("WM_DELETE_WINDOW", self.button_exit_handler)
         self.font = ("TkDefaultFont", 14)
         self.check_boxes = None
         self.logger.info("We create and pack a label that says Question")
