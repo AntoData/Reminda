@@ -54,23 +54,30 @@ class ConfigPopUp(SimpleWindow):
             self.button_save["state"] = tk.DISABLED
 
     def __init__(self, height: int, width: int, title: str):
+        self.logger.info("We create a {0}x{1} with title {2}".format(height, width, title))
         SimpleWindow.__init__(self, height, width, title)
+        self.logger.info("We create and place a label that says: {0}".format(ConfigPopUp.label_text_secs_to_answer))
         label_secs_to_answer = tk.Label(self.window, text=ConfigPopUp.label_text_secs_to_answer)
         label_secs_to_answer.grid(column=0, row=0, padx=2)
+        self.logger.info("We create an Entry with StringVar with traces in mode w only_digits and enable_button_save")
         self.secs_to_answer_StringVar = tk.StringVar(self.window,
                                                      value=str(Config.ConfigLogicClass.ConfigClass.secs_to_answer))
         self.secs_to_answer_StringVar.trace("w", callback=self.only_digits)
         self.secs_to_answer_StringVar.trace("w", callback=self.enable_button_save)
         entry_secs_to_answer = tk.Entry(self.window, textvariable=self.secs_to_answer_StringVar)
         entry_secs_to_answer.grid(column=1, row=0)
+        self.logger.info("We create and place a label that says: {0}".format(ConfigPopUp.
+                                                                             label_text_secs_between_questions))
         label_secs_between_questions = tk.Label(self.window, text=ConfigPopUp.label_text_secs_between_questions)
         label_secs_between_questions.grid(column=0, row=1, padx=2)
+        self.logger.info("We create an Entry with StringVar with traces in mode w only_digits and enable_button_save")
         self.secs_between_questions_StringVar = tk.StringVar(
             self.window, value=str(Config.ConfigLogicClass.ConfigClass.secs_between_questions))
         self.secs_between_questions_StringVar.trace("w", callback=self.only_digits)
         self.secs_between_questions_StringVar.trace("w", self.enable_button_save)
         entry_secs_between_questions = tk.Entry(self.window, textvariable=self.secs_between_questions_StringVar)
         entry_secs_between_questions.grid(column=1, row=1)
+        self.logger.info("Create a button called Save with command handler_button_save and disabled by default")
         self.font_button_save = ("Century", 14, "bold")
         self.button_save = tk.Button(self.window, text="Save", command=self.handler_button_save, state=tk.DISABLED,
                                      background="#128301", activebackground="#128301", disabledforeground="#CACACA",
