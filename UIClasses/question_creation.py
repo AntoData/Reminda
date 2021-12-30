@@ -240,20 +240,25 @@ class QuestionCreation(SimpleWindow):
         self.window.destroy()
 
     def __init__(self, title):
+        self.logger.info("We create a 600x500 SimpleWindow")
         SimpleWindow.__init__(self, 600, 500, title)
         self.font = ("TkDefaultFont", 14)
         self.check_boxes = None
+        self.logger.info("We create and pack a label that says Question")
         self.question_label: tk.Label = tk.Label(self.window, text="Question", font=self.font)
         self.question_label.pack()
+        self.logger.info("We create a textarea for the question with after 1 ns check_button_save_question")
         self.question_text: tk.Text = tk.Text(self.window, width=57, height=7)
         self.after_func = self.question_text.after(1, self.check_button_save_question)
         self.question_text.pack()
         tk.Frame(self.window, height=20).pack()
+        self.logger.info("We create a label with text Answer that changes to Answers")
         self.answer_stringVar = tk.StringVar("")
         self.answer_stringVar.set("Answer")
         self.label_answer = tk.Label(self.window, textvariable=self.answer_stringVar, font=self.font)
         self.label_answer.pack()
         tk.Frame(self.window, height=20)
+        self.logger.info("We create all the attributes we might need in the future to None")
         self.frame = None
         self.answer_stringVar1: tk.StringVar = None
         self.first_answer = None
@@ -269,6 +274,7 @@ class QuestionCreation(SimpleWindow):
         self.intVars = None
         self.question_result: QuestionClass = None
         self.after_func = None
+        self.logger.info("We execute single_answer_display to display the view for a unique answer")
         self.single_answer_display()
 
 

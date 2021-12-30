@@ -29,6 +29,7 @@ class LoadQuestionnaire(SimpleWindow):
         self.button = tk.Button(self.window, text="Load", command=self.command)
         self.button.pack()
 
+
 if __name__ == "__main__":
     c = LoadQuestionnaire()
     c.window.mainloop()
