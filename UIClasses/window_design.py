@@ -10,6 +10,7 @@ import abc
 class SimpleWindow(abc.ABC, metaclass=LoggerMeta.MetaAbsLogger):
     @abc.abstractmethod
     def __init__(self, height: int, width: int, title: str):
+        self.logger.info("We call tk.Tk()")
         self.window = tk.Tk()
         self.window.title(title)
         self.height: int = height

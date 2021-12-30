@@ -2,6 +2,7 @@ from __future__ import annotations
 import sys
 sys.path.append("../BE-Logic")
 sys.path.append("../Config")
+import LoggerMeta
 from Questionnaire import QuestionnaireClass
 from Current_session import CurrentSession
 from QuestionLogic import QuestionClass
@@ -9,6 +10,7 @@ from window_design import SimpleWindow
 import tkinter as tk
 
 
+@LoggerMeta.class_decorator_logger("INFO")
 class QuestionCreation(SimpleWindow):
     exit: bool = False
 

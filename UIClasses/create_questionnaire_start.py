@@ -2,6 +2,7 @@ from __future__ import annotations
 import sys
 sys.path.append("../BE-Logic")
 sys.path.append("../Config")
+import LoggerMeta
 from Questionnaire import QuestionnaireClass
 from Current_session import CurrentSession
 from QuestionLogic import QuestionClass
@@ -11,6 +12,7 @@ from question_creation_handler import QuestionCreationHandler
 from pathvalidate import sanitize_filepath
 
 
+@LoggerMeta.class_decorator_logger("INFO")
 class CreateQuestionnaire(SimpleWindow):
     def validate_input_name(self, *args):
         self.logger.info("We validate if the input contains only whitespaces")

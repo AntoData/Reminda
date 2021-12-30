@@ -1,7 +1,8 @@
 import LoggerMeta
 
 
-class CurrentSession(LoggerMeta.MetaLogger):
+@LoggerMeta.class_decorator_logger("INFO")
+class CurrentSession(metaclass=LoggerMeta.MetaLogger):
     current_session: {str: bool} = {}
 
     @classmethod

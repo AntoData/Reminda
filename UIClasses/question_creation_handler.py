@@ -11,6 +11,7 @@ import tkinter as tk
 from question_creation import QuestionCreation
 
 
+@LoggerMeta.class_decorator_logger("INFO")
 class QuestionCreationHandler(metaclass=LoggerMeta.MetaLogger):
     window_question_object = None
 

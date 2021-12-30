@@ -14,6 +14,7 @@ import os
 import Config.ConfigLogicClass
 
 
+@LoggerMeta.class_decorator_logger("INFO")
 class QuestionWindowAbs(SimpleWindow, abc.ABC):
     """TO DO"""
     def go_back_to_main(self):

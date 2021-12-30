@@ -5,6 +5,7 @@ import pickle
 import copy
 
 
+@LoggerMeta.class_decorator_logger("INFO")
 class QuestionnaireClass(metaclass=LoggerMeta.MetaLogger):
     def __init__(self, name: str):
         self.__name: str = name

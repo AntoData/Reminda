@@ -4,6 +4,7 @@ import shelve
 import LoggerMeta
 
 
+@LoggerMeta.class_decorator_logger("INFO")
 class ConfigClass(metaclass=LoggerMeta.MetaLogger):
     config_filename: str = "{0}/Config/config.cfg".format(LoggerMeta.MetaLogger.get_root())
     try:

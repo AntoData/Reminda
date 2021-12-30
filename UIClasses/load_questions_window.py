@@ -10,6 +10,7 @@ from question_windows_handler import QuestionnaireWindowHandler
 from Questionnaire import QuestionnaireClass
 
 
+@LoggerMeta.class_decorator_logger("INFO")
 class LoadQuestionnaire(SimpleWindow):
     def command(self):
         filename: str = self.combo.get().replace(".pickle","")

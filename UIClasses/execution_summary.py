@@ -10,6 +10,7 @@ from Questionnaire import QuestionnaireClass
 from Current_session import CurrentSession
 
 
+@LoggerMeta.class_decorator_logger("INFO")
 class ExecutionSummary(SimpleWindow):
     def __init__(self):
         SimpleWindow.__init__(self, 400, 400, "Summary")
