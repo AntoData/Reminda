@@ -4,7 +4,6 @@ import abc
 from logging.handlers import RotatingFileHandler
 
 
-
 class MetaAbsLogger(abc.ABCMeta):
     logger = None
 

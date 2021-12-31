@@ -25,7 +25,6 @@ class QuestionWindowAbs(SimpleWindow, abc.ABC):
     def __init__(self, question: QuestionClass, i: int, width: int, height: int):
         self.logger.info("We are going to display question: {0}".format(question))
         SimpleWindow.__init__(self, width=width, height=height, title="Question {0}".format(i))
-        self.window.resizable(width=False, height=False)
         self.logger.info("Set window to no resizable")
         self.menu = tk.Menu(self.window)
         self.logger.info("Creating menu for this window")

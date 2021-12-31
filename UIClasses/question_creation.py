@@ -241,7 +241,6 @@ class QuestionCreation(SimpleWindow):
         self.logger.info("We destroy the window")
         self.window.destroy()
 
-
     def __init__(self, title):
         self.logger.info("We create a 600x500 SimpleWindow")
         SimpleWindow.__init__(self, 600, 500, title)

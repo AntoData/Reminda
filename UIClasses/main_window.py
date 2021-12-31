@@ -24,8 +24,8 @@ class MainWindow(SimpleWindow):
         load = load_questions_window.LoadQuestionnaire()
         load.window.mainloop()
 
-    @staticmethod
-    def config_handler():
+    def config_handler(self):
+        self.window.destroy()
         c = ConfigPopUp(120, 287, "Configuration")
         c.window.mainloop()
 
@@ -41,7 +41,6 @@ class MainWindow(SimpleWindow):
 
     def __init__(self):
         SimpleWindow.__init__(self, 230, 650, "Reminda")
-        self.window.resizable(height=False, width=False)
         self.menu: tk.Menu = tk.Menu(self.window)
         self.window.config(menu=self.menu)
         self.file_menu: tk.Menu = tk.Menu(self.menu, tearoff=0)
@@ -49,7 +48,7 @@ class MainWindow(SimpleWindow):
         self.file_menu.add_command(label="New", command=self.button_new_handler)
         self.file_menu.add_command(label="Load file", command=self.button_load_handler)
         self.file_menu.add_command(label="Exit", command=self.window.destroy)
-        self.menu.add_command(label="Config", command=MainWindow.config_handler)
+        self.menu.add_command(label="Config", command=self.config_handler)
         tk.Frame(self.window, height=50).pack()
         self.label_main: tk.Label = tk.Label(self.window,
                                              text="Welcome to Reminda, an app to help you prepare for exams",

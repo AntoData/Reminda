@@ -6,9 +6,8 @@ import LoggerMeta
 import Config.ConfigLogicClass
 from window_design import SimpleWindow
 import tkinter as tk
-from tkinter import ttk
-import abc
 from tkinter import messagebox
+import main_window
 
 
 @LoggerMeta.class_decorator_logger("INFO")
@@ -53,6 +52,10 @@ class ConfigPopUp(SimpleWindow):
             self.logger.info("We deleted one of the values so we disable the button Save again")
             self.button_save["state"] = tk.DISABLED
 
+    def exit_handler(self):
+        self.window.destroy()
+        main_window.MainWindow().window.mainloop()
+
     def __init__(self, height: int, width: int, title: str):
         self.logger.info("We create a {0}x{1} with title {2}".format(height, width, title))
         SimpleWindow.__init__(self, height, width, title)
@@ -84,6 +87,7 @@ class ConfigPopUp(SimpleWindow):
                                      activeforeground="#FFFFFF", foreground="#FFFFFF", font=self.font_button_save,
                                      padx=2, pady=2)
         self.button_save.grid(row=2, columnspan=2, padx=10, pady=10)
+        self.window.protocol("WM_DELETE_WINDOW", self.exit_handler)
 
 
 if __name__ == "__main__":
