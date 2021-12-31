@@ -79,6 +79,8 @@ class QuestionnaireClass(metaclass=LoggerMeta.MetaLogger):
         except Exception as e:
             LoggerMeta.MetaLogger.logger.error("Error when trying to load a questionnaire from file: {0}".
                                                format(file_path))
+            LoggerMeta.MetaLogger.logger.error("Error when trying to load a questionnaire from file: {0}".
+                                               format(e))
             raise pickle.PickleError from e
 
     @staticmethod
