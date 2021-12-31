@@ -16,14 +16,17 @@ class SimpleWindow(abc.ABC, metaclass=LoggerMeta.MetaAbsLogger):
         self.height: int = height
         self.width: int = width
         self.window.geometry("{0}x{1}".format(width, height))
+        self.icon_filename = "{0}/Config/icon.png".format(LoggerMeta.MetaAbsLogger.get_root())
+        self.window.tk.call("wm", "iconphoto", self.window._w, tk.PhotoImage(file=self.icon_filename))
 
 
 if __name__ == "__main__":
     try:
-        s = SimpleWindow(200,200,"Exception")
+        s = SimpleWindow(200, 200, "Exception")
         assert False
     except Exception as e:
         assert True
+
     @LoggerMeta.class_decorator_logger("INFO")
     class NewWindow(SimpleWindow):
         def __init__(self):
