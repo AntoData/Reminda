@@ -4,11 +4,7 @@ sys.path.append("../BE-Logic")
 sys.path.append("../Config")
 from Questionnaire import QuestionnaireClass
 from Current_session import CurrentSession
-from QuestionLogic import QuestionClass
 import LoggerMeta
-import tkinter as tk
-from tkinter import ttk
-import os
 import Config.ConfigLogicClass
 import question_windows
 from execution_summary import ExecutionSummary

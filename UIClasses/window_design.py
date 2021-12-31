@@ -2,7 +2,6 @@ import sys
 sys.path.append("../BE-Logic")
 import LoggerMeta
 import tkinter as tk
-from tkinter import ttk
 import abc
 
 

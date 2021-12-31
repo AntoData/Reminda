@@ -4,9 +4,6 @@ sys.path.append("../Config")
 import LoggerMeta
 from window_design import SimpleWindow
 import tkinter as tk
-from tkinter import ttk
-import os
-from Questionnaire import QuestionnaireClass
 from Current_session import CurrentSession
 
 
