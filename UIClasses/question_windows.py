@@ -7,6 +7,7 @@ from Current_session import CurrentSession
 import LoggerMeta
 from window_design import SimpleWindow
 import tkinter as tk
+from tkinter import ttk
 import main_window
 
 
@@ -178,6 +179,21 @@ class QuestionTwoAnswersMultiple(QuestionWindowAbs):
     def __init__(self, question: QuestionClass, i):
         self.logger.info("We create a 600x550 window")
         QuestionWindowAbs.__init__(self, question, i, 600, 550)
+        self.container = ttk.Frame(self.window)
+        self.canvas = tk.Canvas(self.container)
+        self.scrollbar = ttk.Scrollbar(self.container, orient="vertical", command=self.canvas.yview)
+        self.scrollable_frame = ttk.Frame(self.canvas)
+
+        self.scrollable_frame.bind(
+            "<Configure>",
+            lambda e: self.canvas.configure(
+                scrollregion=self.canvas.bbox("all")
+            )
+        )
+
+        self.canvas.create_window((0, 0), window=self.scrollable_frame, anchor="nw")
+
+        self.canvas.configure(yscrollcommand=self.scrollbar.set)
         self.check_boxes = []
         self.logger.info("The size of our font is 12")
         self.check_button_font = ("TkDefaultFont", 12)
@@ -188,11 +204,14 @@ class QuestionTwoAnswersMultiple(QuestionWindowAbs):
             var_int: tk.IntVar = tk.IntVar()
             self.logger.info("We create the checkbox with text {0}".format(entry[0]))
             self.logger.info("With command self.checking_box")
-            check_box = tk.Checkbutton(self.window, text=entry[0], font=self.check_button_font,
-                                       command=self.checking_box, variable=var_int)
+            check_box = tk.Checkbutton(self.scrollable_frame, text=entry[0], font=self.check_button_font,
+                                       command=self.checking_box, variable=var_int, wraplength=550)
             self.vars_int.append(var_int)
             check_box.pack()
             self.check_boxes.append(check_box)
+            self.container.pack()
+            self.canvas.pack(side="left", fill="both", expand=True)
+            self.scrollbar.pack(side="right", fill="y")
 
 
 if __name__ == "__main__":
