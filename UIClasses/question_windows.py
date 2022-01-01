@@ -52,6 +52,9 @@ class QuestionWindowAbs(SimpleWindow, abc.ABC):
         self.canvas.create_window((0, 0), window=self.scrollable_frame, anchor="nw")
 
         self.canvas.configure(yscrollcommand=self.scrollbar.set)
+        self.answer_font: tkfont.Font = None
+        self.padding_function = lambda x: (self.scrollable_frame["width"] - self.answer_font.measure(x[0])) / 2 \
+            if len(x[0]) < 540 else 5
 
     @staticmethod
     def reveal_result_labels(obj, correct: bool):
@@ -111,13 +114,14 @@ class QuestionOneAnswer(QuestionWindowAbs):
         self.logger.info("Disabling the button Reveal Answer")
         self.button_answer["state"] = tk.DISABLED
         self.logger.info("Adding button Correct and Failed")
+        self.container["width"] = 510
+        self.canvas["width"] = 510
+        self.scrollable_frame["width"] = 510
+        self.answer_font = tkfont.Font(family="TkDefaultFont", size=15)
         self.answer_label = tk.Label(self.scrollable_frame, width=200, height=6,
                                      text=self.question.get_correct_answers(),
-                                     wraplength=500, font=("TkDefaultFont", 15))
+                                     wraplength=500, font=self.answer_font)
         self.answer_label.pack()
-        self.container.pack()
-        self.canvas.pack(side="left", fill="both", expand=True)
-        self.scrollbar.pack(side="right", fill="y")
         frame = tk.Frame(self.scrollable_frame, width=600, height=50)
         frame.pack()
         self.button_correct = tk.Button(frame, text="Correct", background="#128301", activebackground="#128301",
@@ -130,7 +134,7 @@ class QuestionOneAnswer(QuestionWindowAbs):
         tk.Frame(frame, width=50).grid(row=0, column=1)
         self.button_failed.grid(row=0, column=2)
         self.scrollable_frame.pack()
-
+        self.pack_scrollable_widgets()
         self.logger.info("Window is resized to 600x650")
         self.window.geometry("600x650")
 
@@ -161,7 +165,7 @@ class QuestionOneAnswerMultiple(QuestionWindowAbs):
         self.logger.info("We created the IntVar for the group of radio buttons")
         self.answer_group: tk.IntVar = tk.IntVar(0)
         self.logger.info("Our font is size 12")
-        self.radio_button_font = ("TkDefaultFont", 12)
+        self.answer_font = tkfont.Font(family="TkDefaultFont", size=12)
         i: int = 0
         for entry in self.question.answers:
             if entry[1]:
@@ -171,9 +175,10 @@ class QuestionOneAnswerMultiple(QuestionWindowAbs):
                 value: int = i
             self.logger.info("Creating radio button")
             radio_button = tk.Radiobutton(self.scrollable_frame, text=entry[0], value=value, variable=self.answer_group,
-                                          command=self.reveal_result, font=self.radio_button_font, anchor=tk.CENTER)
+                                          command=self.reveal_result, font=self.answer_font,
+                                          padx=self.padding_function(entry), wraplength=540, anchor=tk.CENTER)
             radio_button.deselect()
-            radio_button.pack(fill=tk.X)
+            radio_button.pack()
             self.radio_buttons.append(radio_button)
         self.pack_scrollable_widgets()
 
@@ -211,20 +216,17 @@ class QuestionTwoAnswersMultiple(QuestionWindowAbs):
 
         self.check_boxes = []
         self.logger.info("The size of our font is 12")
-        self.check_button_font = ("TkDefaultFont", 12)
-        self.check_button_font: tkfont.Font = tkfont.Font(family="TkDefaultFont", size=12, weight="normal")
+        self.answer_font = tkfont.Font(family="TkDefaultFont", size=12, weight="normal")
         self.checks_done: int = 0
         self.vars_int: [tk.IntVar] = []
-        padding = lambda x: (self.scrollable_frame["width"] - self.check_button_font.measure(x[0])) / 2 if len(x[0]) < \
-                                                                                                           540 else 5
         for entry in self.question.answers:
             self.logger.info("We create an IntVar for a check box")
             var_int: tk.IntVar = tk.IntVar()
             self.logger.info("We create the checkbox with text {0}".format(entry[0]))
             self.logger.info("With command self.checking_box")
-            check_box = tk.Checkbutton(self.scrollable_frame, text=entry[0], font=self.check_button_font,
+            check_box = tk.Checkbutton(self.scrollable_frame, text=entry[0], font=self.answer_font,
                                        command=self.checking_box, variable=var_int, wraplength=540,
-                                       padx=padding(entry), anchor=tk.CENTER)
+                                       padx=self.padding_function(entry), anchor=tk.CENTER)
             self.vars_int.append(var_int)
             check_box.pack(in_=self.scrollable_frame, anchor="c")
             self.check_boxes.append(check_box)
@@ -269,12 +271,28 @@ if __name__ == "__main__":
     q3 = QuestionClass("What of the following ones are Python basic types?",
                        [("We didn't start the fire", False), ("Bool", True),
                         ("Normal is not how I would describe "
-                         "this test", False), ("You are basic,"
-                                               "this is a very"
-                                               "very very very "
-                                               "very "
-                                               "basic question. "
-                                               "You should know"
-                                               "this one", False)])
+                         "this test", False), ("Basic. But this is a basic question too. If you don't know this, "
+                                               "review the basics of Python. Maybe going back to PCEP would be "
+                                               "a good idea. A basic type might be a good idea too. But do we have "
+                                               "it currently? If you think so, select this one.", False)])
     qa3 = QuestionTwoAnswersMultiple(q3, 6)
     qa3.window.mainloop()
+    q4 = QuestionClass("Which of the following countries belong to the European Union",
+                       [("Norway entered the EU in 1995. It is one of the core members of the European "
+                         "Union, being a bigger contributor than Germany. Norway has hold the presidency"
+                         "of the European Union Several times ", False), ("Latvia entered the European "
+                                                                          "Union in 2004. It is one of the most "
+                                                                          "promising economies. It has a land border"
+                                                                          " with Russia and access to the Baltic Sea. "
+                                                                          "Riga is one of the most important cities in "
+                                                                          "the area.", True),
+                        ("Serbia entered the European Union in 2007. It has become the biggest supporter of the "
+                         "European Union in the area. 90% of its population are glad Serbia entered the European Union."
+                         " Belgrade has plans to ask to hold some institutions that were previously located in the UK."
+                         , False),
+                        ("San Marino entered the European Union is 2004. A nation fully integrated in the European "
+                         "Union now. It is also a country whose currency is the Euro. Before it was the Lira.",
+                         False)])
+    qa4 = QuestionOneAnswerMultiple(q4, 6)
+    qa4.window.mainloop()
+
