@@ -10,6 +10,7 @@ from window_design import SimpleWindow
 import tkinter as tk
 from tkinter import ttk
 import main_window
+import tkinter.font as tkfont
 
 
 @LoggerMeta.class_decorator_logger("INFO")
@@ -36,10 +37,10 @@ class QuestionWindowAbs(SimpleWindow, abc.ABC):
         self.question_label["pady"] = 30
         self.question_label.pack()
         self.logger.info("Created label for the question")
-        self.container = ttk.Frame(self.window, width=width - 20, height=height / 2)
+        self.container = ttk.Frame(self.window, width=width - 20)
         self.canvas = tk.Canvas(self.container, width=width - 20)
         self.scrollbar = ttk.Scrollbar(self.container, orient="vertical", command=self.canvas.yview)
-        self.scrollable_frame = ttk.Frame(self.canvas)
+        self.scrollable_frame = ttk.Frame(self.canvas, width=width - 20)
 
         self.scrollable_frame.bind(
             "<Configure>",
@@ -75,6 +76,11 @@ class QuestionWindowAbs(SimpleWindow, abc.ABC):
         except Exception as e:
             obj.logger.warning("Error while trying to cancel func after: {0}".format(e))
         obj.window.after(10000, obj.window.destroy)
+
+    def pack_scrollable_widgets(self):
+        self.container.pack()
+        self.canvas.pack(side="left", fill="both", expand=True)
+        self.scrollbar.pack(side="right", fill="y")
 
 
 class QuestionOneAnswer(QuestionWindowAbs):
@@ -112,7 +118,7 @@ class QuestionOneAnswer(QuestionWindowAbs):
         self.container.pack()
         self.canvas.pack(side="left", fill="both", expand=True)
         self.scrollbar.pack(side="right", fill="y")
-        frame = tk.Frame(self.window, width=600, height=50)
+        frame = tk.Frame(self.scrollable_frame, width=600, height=50)
         frame.pack()
         self.button_correct = tk.Button(frame, text="Correct", background="#128301", activebackground="#128301",
                                         disabledforeground="#BDBDBD", activeforeground="#FFFFFF", foreground="#FFFFFF",
@@ -123,6 +129,8 @@ class QuestionOneAnswer(QuestionWindowAbs):
         self.button_correct.grid(row=0, column=0)
         tk.Frame(frame, width=50).grid(row=0, column=1)
         self.button_failed.grid(row=0, column=2)
+        self.scrollable_frame.pack()
+
         self.logger.info("Window is resized to 600x650")
         self.window.geometry("600x650")
 
@@ -162,11 +170,12 @@ class QuestionOneAnswerMultiple(QuestionWindowAbs):
                 i -= 1
                 value: int = i
             self.logger.info("Creating radio button")
-            radio_button = tk.Radiobutton(self.window, text=entry[0], value=value, variable=self.answer_group,
-                                          command=self.reveal_result, font=self.radio_button_font)
+            radio_button = tk.Radiobutton(self.scrollable_frame, text=entry[0], value=value, variable=self.answer_group,
+                                          command=self.reveal_result, font=self.radio_button_font, anchor=tk.CENTER)
             radio_button.deselect()
-            radio_button.pack()
+            radio_button.pack(fill=tk.X)
             self.radio_buttons.append(radio_button)
+        self.pack_scrollable_widgets()
 
 
 class QuestionTwoAnswersMultiple(QuestionWindowAbs):
@@ -203,17 +212,21 @@ class QuestionTwoAnswersMultiple(QuestionWindowAbs):
         self.check_boxes = []
         self.logger.info("The size of our font is 12")
         self.check_button_font = ("TkDefaultFont", 12)
+        self.check_button_font: tkfont.Font = tkfont.Font(family="TkDefaultFont", size=12, weight="normal")
         self.checks_done: int = 0
         self.vars_int: [tk.IntVar] = []
+        padding = lambda x: (self.scrollable_frame["width"] - self.check_button_font.measure(x[0])) / 2 if len(x[0]) < \
+                                                                                                           540 else 5
         for entry in self.question.answers:
             self.logger.info("We create an IntVar for a check box")
             var_int: tk.IntVar = tk.IntVar()
             self.logger.info("We create the checkbox with text {0}".format(entry[0]))
             self.logger.info("With command self.checking_box")
             check_box = tk.Checkbutton(self.scrollable_frame, text=entry[0], font=self.check_button_font,
-                                       command=self.checking_box, variable=var_int, wraplength=550)
+                                       command=self.checking_box, variable=var_int, wraplength=540,
+                                       padx=padding(entry), anchor=tk.CENTER)
             self.vars_int.append(var_int)
-            check_box.pack()
+            check_box.pack(in_=self.scrollable_frame, anchor="c")
             self.check_boxes.append(check_box)
             self.container.pack()
             self.canvas.pack(side="left", fill="both", expand=True)
@@ -221,7 +234,13 @@ class QuestionTwoAnswersMultiple(QuestionWindowAbs):
 
 
 if __name__ == "__main__":
-    q0 = QuestionClass("What do you say to a person in the morning?", "Good morning")
+    q0 = QuestionClass("What do you say to a person in the morning?", "Well, it depends on the day. Good morning when "
+                                                                      "I am pumped about the day. Just morning when I "
+                                                                      "tired. Nothing when I am sad. Also nothing if "
+                                                                      "I don't know that person. Hi if it is something "
+                                                                      "familiar. It really depends on so many factors. "
+                                                                      "The best thing is to smile to that person and "
+                                                                      "move on.")
     qa = QuestionOneAnswer(q0, 3)
     qa.window.mainloop()
 
@@ -243,6 +262,19 @@ if __name__ == "__main__":
                          " Belgrade has plans to ask to hold some institutions that were previously located in the UK."
                          , False),
                         ("Malta entered the European Union is 2004. A nation fully integrated in the European Union "
-                         "now. It is also a country whose currency is the Euro. Before it was the Maltese Lira.", True)])
+                         "now. It is also a country whose currency is the Euro. Before it was the Maltese Lira.",
+                         True)])
     qa2 = QuestionTwoAnswersMultiple(q2, 5)
     qa2.window.mainloop()
+    q3 = QuestionClass("What of the following ones are Python basic types?",
+                       [("We didn't start the fire", False), ("Bool", True),
+                        ("Normal is not how I would describe "
+                         "this test", False), ("You are basic,"
+                                               "this is a very"
+                                               "very very very "
+                                               "very "
+                                               "basic question. "
+                                               "You should know"
+                                               "this one", False)])
+    qa3 = QuestionTwoAnswersMultiple(q3, 6)
+    qa3.window.mainloop()
