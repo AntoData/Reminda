@@ -1,5 +1,6 @@
 import abc
 import sys
+
 sys.path.append("../BE-Logic")
 sys.path.append("../Config")
 from QuestionLogic import QuestionClass
@@ -35,6 +36,21 @@ class QuestionWindowAbs(SimpleWindow, abc.ABC):
         self.question_label["pady"] = 30
         self.question_label.pack()
         self.logger.info("Created label for the question")
+        self.container = ttk.Frame(self.window, width=width - 20, height=height / 2)
+        self.canvas = tk.Canvas(self.container, width=width - 20)
+        self.scrollbar = ttk.Scrollbar(self.container, orient="vertical", command=self.canvas.yview)
+        self.scrollable_frame = ttk.Frame(self.canvas)
+
+        self.scrollable_frame.bind(
+            "<Configure>",
+            lambda e: self.canvas.configure(
+                scrollregion=self.canvas.bbox("all")
+            )
+        )
+
+        self.canvas.create_window((0, 0), window=self.scrollable_frame, anchor="nw")
+
+        self.canvas.configure(yscrollcommand=self.scrollbar.set)
 
     @staticmethod
     def reveal_result_labels(obj, correct: bool):
@@ -51,7 +67,7 @@ class QuestionWindowAbs(SimpleWindow, abc.ABC):
             message = "Failed"
             colour = "#BF1602"
         tk.Frame(obj.window, height=15).pack()
-        label = tk.Label(obj.window, background=colour, foreground="#FFFFFF", text=message,
+        label = tk.Label(obj.scrollable_frame, background=colour, foreground="#FFFFFF", text=message,
                          font=("Century", 15, "bold"))
         label.pack()
         try:
@@ -89,17 +105,21 @@ class QuestionOneAnswer(QuestionWindowAbs):
         self.logger.info("Disabling the button Reveal Answer")
         self.button_answer["state"] = tk.DISABLED
         self.logger.info("Adding button Correct and Failed")
-        self.answer_label = tk.Label(self.window, width=200, height=6, text=self.question.get_correct_answers(),
+        self.answer_label = tk.Label(self.scrollable_frame, width=200, height=6,
+                                     text=self.question.get_correct_answers(),
                                      wraplength=500, font=("TkDefaultFont", 15))
         self.answer_label.pack()
+        self.container.pack()
+        self.canvas.pack(side="left", fill="both", expand=True)
+        self.scrollbar.pack(side="right", fill="y")
         frame = tk.Frame(self.window, width=600, height=50)
         frame.pack()
         self.button_correct = tk.Button(frame, text="Correct", background="#128301", activebackground="#128301",
-                                   disabledforeground="#BDBDBD", activeforeground="#FFFFFF", foreground="#FFFFFF",
-                                   font=("Century", 15, "bold"), command=self.command_button_correct)
+                                        disabledforeground="#BDBDBD", activeforeground="#FFFFFF", foreground="#FFFFFF",
+                                        font=("Century", 15, "bold"), command=self.command_button_correct)
         self.button_failed = tk.Button(frame, text="Failed", background="#BF1602", activebackground="#BF1602",
-                                  disabledforeground="#BDBDBD", activeforeground="#FFFFFF", foreground="#FFFFFF",
-                                  font=("Century", 15, "bold"), command=self.command_button_failed)
+                                       disabledforeground="#BDBDBD", activeforeground="#FFFFFF", foreground="#FFFFFF",
+                                       font=("Century", 15, "bold"), command=self.command_button_failed)
         self.button_correct.grid(row=0, column=0)
         tk.Frame(frame, width=50).grid(row=0, column=1)
         self.button_failed.grid(row=0, column=2)
@@ -109,7 +129,7 @@ class QuestionOneAnswer(QuestionWindowAbs):
     def __init__(self, question: QuestionClass, i):
         self.logger.info("We create a 600x450 window")
         QuestionWindowAbs.__init__(self, question, i, 600, 450)
-        self.button_answer = tk.Button(self.window, text="Reveal answer", command=self.reveal_answer,)
+        self.button_answer = tk.Button(self.window, text="Reveal answer", command=self.reveal_answer, )
         self.button_answer.pack()
         self.logger.info("Added button to Reveal Answer")
         self.answer_label = None
@@ -179,21 +199,7 @@ class QuestionTwoAnswersMultiple(QuestionWindowAbs):
     def __init__(self, question: QuestionClass, i):
         self.logger.info("We create a 600x550 window")
         QuestionWindowAbs.__init__(self, question, i, 600, 550)
-        self.container = ttk.Frame(self.window)
-        self.canvas = tk.Canvas(self.container)
-        self.scrollbar = ttk.Scrollbar(self.container, orient="vertical", command=self.canvas.yview)
-        self.scrollable_frame = ttk.Frame(self.canvas)
 
-        self.scrollable_frame.bind(
-            "<Configure>",
-            lambda e: self.canvas.configure(
-                scrollregion=self.canvas.bbox("all")
-            )
-        )
-
-        self.canvas.create_window((0, 0), window=self.scrollable_frame, anchor="nw")
-
-        self.canvas.configure(yscrollcommand=self.scrollbar.set)
         self.check_boxes = []
         self.logger.info("The size of our font is 12")
         self.check_button_font = ("TkDefaultFont", 12)
@@ -224,6 +230,19 @@ if __name__ == "__main__":
     qa1 = QuestionOneAnswerMultiple(q1, 4)
     qa1.window.mainloop()
     q2 = QuestionClass("Which of the following countries belong to the European Union",
-                                     [("Serbia", False), ("Latvia", True), ("Norway", False), ("Malta", True)])
+                       [("Norway entered the EU in 1995. It is one of the core members of the European "
+                         "Union, being a bigger contributor than Germany. Norway has hold the presidency"
+                         "of the European Union Several times ", False), ("Latvia entered the European "
+                                                                          "Union in 2004. It is one of the most "
+                                                                          "promising economies. It has a land border"
+                                                                          " with Russia and access to the Baltic Sea. "
+                                                                          "Riga is one of the most important cities in "
+                                                                          "the area.", True),
+                        ("Serbia entered the European Union in 2007. It has become the biggest supporter of the "
+                         "European Union in the area. 90% of its population are glad Serbia entered the European Union."
+                         " Belgrade has plans to ask to hold some institutions that were previously located in the UK."
+                         , False),
+                        ("Malta entered the European Union is 2004. A nation fully integrated in the European Union "
+                         "now. It is also a country whose currency is the Euro. Before it was the Maltese Lira.", True)])
     qa2 = QuestionTwoAnswersMultiple(q2, 5)
     qa2.window.mainloop()
