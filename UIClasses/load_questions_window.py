@@ -7,10 +7,15 @@ import tkinter as tk
 from tkinter import ttk
 import os
 import question_windows_handler
+import main_window
 
 
 @LoggerMeta.class_decorator_logger("INFO")
 class LoadQuestionnaire(SimpleWindow):
+    def exit_button_handler(self):
+        self.window.destroy()
+        main_window.MainWindow().window.mainloop()
+
     def command(self):
         filename: str = self.combo.get().replace(".pickle","")
         self.window.destroy()
@@ -19,10 +24,8 @@ class LoadQuestionnaire(SimpleWindow):
     def __init__(self):
         SimpleWindow.__init__(self, 60, 150, "New Window")
         self.project_folder: str = "{0}/Data/Questionnaires".format(LoggerMeta.MetaLogger.get_root())
-        print(self.project_folder)
         self.dirs = [item for item in os.listdir(self.project_folder)
                      if not os.path.isdir(self.project_folder + "/" + item)]
-        print(self.dirs)
         self.combo = ttk.Combobox(self.window, values=self.dirs)
         self.combo.set("Pick an Option")
         self.combo.pack(padx=5, pady=5)

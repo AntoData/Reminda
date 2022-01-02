@@ -50,7 +50,6 @@ class QuestionWindowAbs(SimpleWindow, abc.ABC):
         )
 
         self.canvas.create_window((0, 0), window=self.scrollable_frame, anchor="nw")
-
         self.canvas.configure(yscrollcommand=self.scrollbar.set)
         self.answer_font: tkfont.Font = None
         self.padding_function = lambda x: (self.scrollable_frame["width"] - self.answer_font.measure(x[0])) / 2 \

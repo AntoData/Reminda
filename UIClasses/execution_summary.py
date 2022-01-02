@@ -5,10 +5,14 @@ import LoggerMeta
 from window_design import SimpleWindow
 import tkinter as tk
 from Current_session import CurrentSession
-
+import main_window
 
 @LoggerMeta.class_decorator_logger("INFO")
 class ExecutionSummary(SimpleWindow):
+    def exit_button_handler(self):
+        self.window.destroy()
+        main_window.MainWindow().window.mainloop()
+
     def __init__(self):
         SimpleWindow.__init__(self, 400, 400, "Summary")
         self.logger.info("400x400 window created")
@@ -60,6 +64,7 @@ class ExecutionSummary(SimpleWindow):
         self.logger.info("We pack the list")
         scrollbar.config(command=mylist.yview)
         self.logger.info("Finish configuration for scrollbar")
+        self.window.protocol("WM_DELETE_WINDOW", self.exit_button_handler)
 
 
 if __name__ == "__main__":
