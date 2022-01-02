@@ -5,6 +5,25 @@ from logging.handlers import RotatingFileHandler
 
 
 class MetaAbsLogger(abc.ABCMeta):
+    """
+    This is an abstract metaclass. This will be the base for our logging feature. This metaclass will add
+    a logger to every abstract class
+    ...
+
+    Attributes
+    ----------
+    logger : logging.Logger
+        Class attribute: This attribute will contain the log object that will create our logs and log from every class
+
+    Methods
+    -------
+    get_root()
+        Static method used to get the full path to the project folder
+
+    __new__(mcs, name: str, bases: tuple, members: dict):
+        Method that will overwrite the method __new__ in every child class, so we add the logger (if it was not added
+        previously)
+    """
     logger = None
 
     @staticmethod
@@ -43,6 +62,13 @@ class MetaAbsLogger(abc.ABCMeta):
 
 
 def class_decorator_logger(level: str):
+    """
+    This is the class decorator that will be the complement to our metaclasses. Using this decorator conjoined
+    with the metaclass we will include in the log any call to any attribute/method of a class
+    :param level: str
+        This is the level of the lines of we want to include in the log (for instance: INFO, ERROR...)
+    :return:
+    """
     def class_decorator_logger_inner(class_):
         def logger_level(cls, log_line: str):
             if level == "INFO":
@@ -85,6 +111,16 @@ def class_decorator_logger(level: str):
 
 
 class MetaLogger(type, metaclass=MetaAbsLogger):
+    """
+    This is a concrete metaclass. This is the concrete metaclass child of MetaAbsLogger
+    ...
+
+    Methods
+    -------
+    __new__(mcs, name: str, bases: tuple, members: dict):
+        Method that will overwrite the method __new__ in every child class, so we add the logger (if it was not added
+        previously)
+    """
     def __new__(mcs, name: str, bases: tuple, members: dict):
         obj = MetaAbsLogger.__new__(mcs, name, bases, members)
         return obj
