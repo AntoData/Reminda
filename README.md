@@ -21,5 +21,3 @@ In order to execute this application you need:
 - In the project folder, execute the following command: pip3 install -r requirements.txt (or pip install -r requirements.txt)
 
 To execute this application, in the project folder just run: python3 main.py
-
-![](../../Pictures/Screenpresso/2022-01-02_21h37_30.png)
