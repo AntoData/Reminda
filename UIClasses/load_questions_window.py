@@ -26,6 +26,7 @@ class LoadQuestionnaire(SimpleWindow):
         self.project_folder: str = "{0}/Data/Questionnaires".format(LoggerMeta.MetaLogger.get_root())
         self.dirs = [item for item in os.listdir(self.project_folder)
                      if not os.path.isdir(self.project_folder + "/" + item)]
+        self.window.protocol("WM_DELETE_WINDOW", self.exit_button_handler)
         self.combo = ttk.Combobox(self.window, values=self.dirs)
         self.combo.set("Pick an Option")
         self.combo.pack(padx=5, pady=5)

@@ -7,6 +7,7 @@ from window_design import SimpleWindow
 import tkinter as tk
 from question_creation_handler import QuestionCreationHandler
 from pathvalidate import sanitize_filepath
+import main_window
 
 
 @LoggerMeta.class_decorator_logger("INFO")
@@ -37,6 +38,10 @@ class CreateQuestionnaire(SimpleWindow):
             self.logger.info("After the sanitation is: {0}".format(correct_input))
             self.input_text_var.set(correct_input)
 
+    def button_exit_handler(self):
+        self.window.destroy()
+        main_window.MainWindow().window.mainloop()
+
     def __init__(self):
         self.logger.info("We create a 100x300 SimpleWindow with title New questionnaire")
         SimpleWindow.__init__(self, 100, 300, "New questionnaire")
@@ -59,6 +64,7 @@ class CreateQuestionnaire(SimpleWindow):
                                                 command=self.button_save_handler)
         self.button_save.grid(column=4, row=0)
         self.question_creation_loop: QuestionCreationHandler = None
+        self.window.protocol("WM_DELETE_WINDOW", self.button_exit_handler)
 
 
 if __name__ == "__main__":
