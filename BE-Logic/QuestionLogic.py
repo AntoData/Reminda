@@ -1,12 +1,51 @@
 from __future__ import annotations
 import LoggerMeta
 
-
+"""lambda function that will return the correct answers to a question"""
 get_anon_correct = lambda answers: [answer[0] for answer in answers if answer[1]]
 
 
 @LoggerMeta.class_decorator_logger("INFO")
 class QuestionClass(metaclass=LoggerMeta.MetaLogger):
+    """
+    This class is used to represent a session when we are answering the questions of a questionnaire
+    ...
+
+    Attributes
+    ----------
+    __question: str
+        A string variable that contains the question to answer
+
+    __answers: str | [(str, bool)]
+        This attribute can be a string containing the only possible answer or a dictionary where they key
+        is a string containing the answer and the value is a boolean that will be True is the answer is correct
+        Max 4 possible answers and 2 correct answers
+
+
+    Methods
+    -------
+    get_question_type(self) -> int:
+        Returns an integer that represents the type of question:
+            0 if the question has only one answers
+            1 if the question has 4 possible answers and only one is correct
+            2 if the question has 4 possible answers and two are correct
+            Raise an exception otherwise
+
+    get_correct_answers(self) -> str | [str]:
+        Return a string with the only correct answer in the case the question has only one possible answer
+        or a list of string with the correct answers if the question has multiple possible answers
+
+    answers(self) -> str | [(str, bool)]:
+        Property method that returns the attribute __question
+
+    question(self) -> str:
+        Property method that returns the attribute __answers
+
+    __str__(self) -> str:
+        Overwritten magic method so the string representation of this class is:
+            {question: answers}
+
+    """
     def __init__(self, question: str, answers: str | [(str, bool)]):
         self.__question: str = question
         self.__answers: str | [(str, bool)] = answers
