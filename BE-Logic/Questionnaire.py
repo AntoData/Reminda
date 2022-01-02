@@ -7,6 +7,75 @@ import copy
 
 @LoggerMeta.class_decorator_logger("INFO")
 class QuestionnaireClass(metaclass=LoggerMeta.MetaLogger):
+    """
+    This class is used to represent a questionnaire which is a set of questions with a name that might or might not
+    been saved to/loaded from a binary file (using pickle)
+    ...
+
+    Attributes
+    ----------
+    __name: str
+        A string variable that contains the name of the questionnaire
+
+    questions: [QuestionLogic.QuestionClass]
+        This is the list with the questions that form the questionnaire (these are from class QuestionClass)
+
+    __position: int
+        This is a pointer that tells us which was the last question we get during a for loop/iteration
+
+    Methods
+    -------
+    name(self) -> str:
+        property method that returns the attribute __name: str
+
+    __iadd__(self, question_new: QuestionLogic.QuestionClass):
+        Overridden magic method that allows as to perform this operation:
+            questionnaire = Questionnaire("name")
+            question = QuestionLogic(...)
+            questionnaire += question -> Adds the question to the list of questions in questionnaire
+
+    __isub__(self, index: int):
+        Overridden magic method that allows as to perform this operation (following the example above):
+        questionnaire -= 0 -> Removes the question in position 0 from the list
+
+    __getitem__(self, pos: int) -> QuestionLogic.QuestionClass:
+        Overwritten magic method that allows as to perform this operation (following the example above):
+        questionnaire[0] -> Returns the question in position 0 from the list
+
+    shuffle(self):
+        Shuffles the list of questions to a random order
+
+    __iter__(self):
+        Overwritten method so our questionnaire object can be used in for loops and generators that iterate through
+        the inner list of questions
+
+    __next__(self) -> QuestionLogic.QuestionClass:
+        Overwritten method so our questionnaire object can be used in for loops and generators that iterate through
+        the inner list of questions. This method returns the question for the next iteratiom
+
+    __len__(self) -> int:
+        Overwritten magic method that allows us to perform the following operation:
+            len(questionnaire_object) -> Returns the length of the list of questions
+
+    __str__(self) -> str:
+        Overwritten magic method that offers a string representation of objects created by this class
+
+    save_as_file(self, path: str):
+        Using pickle saves the current object to a binary pickle file (serialization) in the path in the parameter
+        path
+
+    save_questionnaire(self):
+        Using the method above saves the current object to a file in the default folder used for the application
+        /Data/Questionnaires/ also adds the extension pickle
+
+    load_from_file(file_path: str):
+        Static method that creates an object from this class loading it from a file in the path file_path
+        (deserialization)
+
+    load_questionnaire(name: str):
+        Static method that using the method above loads a file in the default folder with name of the parameter
+        name and creates an object from this class
+    """
     def __init__(self, name: str):
         self.__name: str = name
         self.questions: [QuestionLogic.QuestionClass] = []
