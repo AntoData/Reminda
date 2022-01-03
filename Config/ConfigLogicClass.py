@@ -6,6 +6,43 @@ import LoggerMeta
 
 @LoggerMeta.class_decorator_logger("INFO")
 class ConfigClass(metaclass=LoggerMeta.MetaLogger):
+    """
+    This is a static class that contains in class attributes the different parameters needed to customize
+    the configuration of the application
+    ...
+
+    Attributes
+    ----------
+    config_filename: str
+        A string variable that contains the path to the binary file that contains the parameters needed
+        to customize the configuration of this application
+
+    config_file_static:
+        This class attribute is the shelve object result of opening the file in the path described above
+
+    secs_to_answer: int
+        This class attribute is the number of seconds to answer a question loaded from the configuration file
+
+    secs_between_questions: int
+        This class attribute is the number of seconds between question in which the application will be sleeping
+        so nothing is displayed
+
+    Methods
+    -------
+    set_secs_to_answer(cls, secs_to_answer: int):
+        This class method takes an integer that updates the parameters that controls the seconds to answer a question
+        in the binary config file
+
+    get_secs_to_answer(cls) -> int:
+        This class method returns the number of seconds to answer a question
+
+    set_secs_between_questions(cls, secs_between_questions: int):
+        This class method takes an integer that updates the parameters that controls the seconds that the application
+        will be sleeping between question in the binary config file
+
+    get_secs_between_questions(cls) -> int:
+        This class method returns the number of seconds the application will be sleeping between questions
+    """
     config_filename: str = "{0}/Config/config.cfg".format(LoggerMeta.MetaLogger.get_root())
     try:
         config_file_static = shelve.open(config_filename, "r")
