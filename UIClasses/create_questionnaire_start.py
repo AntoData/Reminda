@@ -12,6 +12,61 @@ import main_window
 
 @LoggerMeta.class_decorator_logger("INFO")
 class CreateQuestionnaire(SimpleWindow):
+    """
+    This is a window class that represents the window that is displayed as the first step to create a new
+    questionnaire. The window in which we fill in the name of the new questionnaire and click Save and move
+    on to the window to create and add question to the questionnaire
+    ...
+
+    Attributes
+    ----------
+    frame0: tk.Frame
+        This frame only adds a little padding at the start of the window
+
+    frame1: tk.Frame
+        This attribute is the frame in which we will place the elements in this window
+
+    input_text_var: tk.StringVar
+        This attribute is the observable variable used in the input where we fill in the name of the new
+        questionnaire and file where it will be saved
+
+    name_input: tk.Entry
+        This attribute is the input where we fill in the name of the new questionnaire that will be saved to a
+        file of the same name
+
+    frame10: tk.Frame
+        This attribute is a frame inside frame1 that will add some padding between the input and the button Save
+
+    button_save: tk.Button
+        This attribute is the button Save that will be enabled when we provide a valid file name
+
+    question_creation_loop: QuestionCreationHandler
+        This attribute is used to create a QuestionCreationHandler when we click the button Save after filling
+        a correct filename
+
+    Methods
+    -------
+    validate_input_name(self, *args)
+        This method is observable trace method assigned to the StringVar linked to the input to provide a valid
+        filename. When we provide a valid filename the button is enabled and when we add an invalid character
+        the button save is disabled
+
+    button_save_handler(self)
+        This method is the command for the button Save. Once we click the button Save, we destroy the current
+        window and start a loop of windows to create each of the questions of the questionnaire, one at a time
+
+    enable_button_save(self, id, ix, act):
+        This method is also added as a trace to the StringVars that are observable variables to the inputs
+        that display and allow the user to update the configuration parameters. In particular, this function
+        that will enable the button Save when we change one of the fields
+
+    valid_filename(self, id, ix, act):
+        This method is observable trace method assigned to the StringVar linked to the input to provide a valid
+        filename. When we press an invalid character, the character is not added to the input
+
+    exit_handler(self):
+        This method customizes the default window exit button to destroy the window and display the main window
+    """
     def validate_input_name(self, *args):
         self.logger.info("We validate if the input contains only whitespaces")
         if self.input_text_var.get().translate(str.maketrans('', '', ' \n\t\r')) == "":
