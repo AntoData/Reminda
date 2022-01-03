@@ -12,6 +12,35 @@ import main_window
 
 @LoggerMeta.class_decorator_logger("INFO")
 class LoadQuestionnaire(SimpleWindow):
+    """
+    This is a window class that represents the window that is displayed when we want to load a questionnaire to start
+    a test and answer the questions
+    ...
+
+    Attributes
+    ----------
+    project_folder: str
+        This contains the full path to the project/file we want to load
+
+    dirs: [str]
+        This attribute contains a list with all the files that contain questionnaires
+
+    combo: ttk.Combobox
+        This attribute is the list with all the questionnaires we found in the default directory
+
+    button: tk.Button
+        This attribute is the button that start the test loading the file we selected and starting
+        the loop of questions of that questionnaire
+
+    Methods
+    -------
+    exit_button_handler(self):
+        This method customizes the default window exit button to destroy the window and display the main window
+
+    command(self):
+        This is the command that is assigned to the button Load. It loads the file selected, creating a questionnaire
+        and start the loop that goes through all the questions in that questionnaire
+    """
     def exit_button_handler(self):
         self.window.destroy()
         main_window.MainWindow().window.mainloop()

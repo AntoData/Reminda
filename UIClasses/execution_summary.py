@@ -10,50 +10,50 @@ import main_window
 @LoggerMeta.class_decorator_logger("INFO")
 class ExecutionSummary(SimpleWindow):
     """
-        This is a window class that represents the window that is displayed when we have gone through all the questions
-        in the questionnaire and we display the results
-        ...
+    This is a window class that represents the window that is displayed when we have gone through all the questions
+    in the questionnaire and we display the results
+    ...
 
-        Attributes
-        ----------
-        total_questions: int
-            Number of questions that compose the questionnaire
+    Attributes
+    ----------
+    total_questions: int
+        Number of questions that compose the questionnaire
 
-        correct_questions
-            This is an array of string that contains all the questions that were answered correctly
+    correct_questions
+        This is an array of string that contains all the questions that were answered correctly
 
-        n_correct_questions: int
-            Number of questions answered correctly
+    n_correct_questions: int
+        Number of questions answered correctly
 
-        qualification: float
-            This attribute is the result of rounding to one decimals the following:
-            (n_correct_questions/total_questions) * 100
+    qualification: float
+        This attribute is the result of rounding to one decimals the following:
+        (n_correct_questions/total_questions) * 100
 
-        colour_font: str
-            This attribute will set the colour of the font depending on the qualifications we got in the
-            message that displays the results of the test
+    colour_font: str
+        This attribute will set the colour of the font depending on the qualifications we got in the
+        message that displays the results of the test
 
-        qualification_font
-            This attribute sets the font for the message that displays the results we got in the test
+    qualification_font
+        This attribute sets the font for the message that displays the results we got in the test
 
-        label_qualification: tk.Label
-            This label displays a message that contains the result of the test
+    label_qualification: tk.Label
+        This label displays a message that contains the result of the test
 
-        scrollbar: tk.Scrollbar
-            This attribute is the scrollbar in the list that contains each question and the result (if answered
-            correctly or not)
+    scrollbar: tk.Scrollbar
+        This attribute is the scrollbar in the list that contains each question and the result (if answered
+        correctly or not)
 
-        item_font:
-            This attribute sets the font of the questions with their results we will display in the list
+    item_font:
+        This attribute sets the font of the questions with their results we will display in the list
 
-        mylist: tk.Listbox
-            This attribute is the list in which each question with its result is displayed
+    mylist: tk.Listbox
+        This attribute is the list in which each question with its result is displayed
 
-        Methods
-        -------
-        exit_handler(self):
-            This method customizes the default window exit button to destroy the window and display the main window
-        """
+    Methods
+    -------
+    exit_handler(self):
+        This method customizes the default window exit button to destroy the window and display the main window
+    """
     def exit_button_handler(self):
         self.window.destroy()
         main_window.MainWindow().window.mainloop()
