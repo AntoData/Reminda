@@ -7,7 +7,7 @@ import LoggerMeta
 @LoggerMeta.class_decorator_logger("INFO")
 class ConfigClass(metaclass=LoggerMeta.MetaLogger):
     """
-    This is a static class that contains in class attributes the different parameters needed to customize
+    This is a static class that contains class attributes the different parameters needed to customize
     the configuration of the application
     ...
 
