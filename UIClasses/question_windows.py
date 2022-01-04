@@ -133,7 +133,7 @@ class QuestionWindowAbs(SimpleWindow, abc.ABC):
 
 class QuestionOneAnswer(QuestionWindowAbs):
     """
-    This is a window class that display a question that only has one possible question that we have to reveal
+    This is a window class that display a question that only has one possible answer that we have to reveal
     and then we give the user the option to click if he answered correctly or not
     ...
 
@@ -231,6 +231,29 @@ class QuestionOneAnswer(QuestionWindowAbs):
 
 
 class QuestionOneAnswerMultiple(QuestionWindowAbs):
+    """
+    This is a window class that display a question that only has four possible answers and only one of them is correct
+    The answers are displayed as radio buttons
+    ...
+
+    Attributes
+    ----------
+    radio_buttons: [tk.Radiobutton]
+        This attribute is a list that will contain all 4 radio buttons that represent the different possible answers
+
+    answer_group: tk.IntVar
+        This attribute is an observable IntVar that is assigned to all radio buttons so all of them belong to the
+        same group (so we can only answer clicking one answer)
+
+    answer_font = tkfont.Font
+        This attribute sets the font for the four possible answers in the radio buttons
+
+    Methods
+    -------
+    reveal_result(self):
+        This is the command linked to all radio buttons that will disable them and display if we answered
+        the question correctly or not
+    """
     def reveal_result(self):
         self.logger.info("Revealing the correct answer")
         self.logger.info("Disabling all the radio buttons")
