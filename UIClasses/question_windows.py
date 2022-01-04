@@ -132,6 +132,42 @@ class QuestionWindowAbs(SimpleWindow, abc.ABC):
 
 
 class QuestionOneAnswer(QuestionWindowAbs):
+    """
+    This is a window class that display a question that only has one possible question that we have to reveal
+    and then we give the user the option to click if he answered correctly or not
+    ...
+
+    Attributes
+    ----------
+    button_answer: tk.Button
+        This attribute is the button to reveal the only answer
+
+    answer_label
+        This attribute is a label that displays the only answer for this question after we reveal it
+
+    button_correct: tk.Button
+        This attribute is the button that we click when we answered the question correctly after revealing
+        the answer
+
+    button_failed: tk.Button
+        This attribute is the button that we click when we answered the question incorrectly after revealing
+        the answer
+
+    Methods
+    -------
+    add_result(self, correct: bool):
+        This method adds the result of this question to the current execution session object of the loop
+
+    command_button_correct(self):
+        This method adds the result of this question to the current execution session object of the loop as correct
+
+    command_button_failed(self):
+        This method adds the result of this question to the current execution session object of the loop as incorrect
+
+    reveal_answer(self):
+        This method is the command linked to the button Reveal Answer that will display the answer and the buttons
+        Correct and Failed
+    """
     def add_result(self, correct: bool):
         self.logger.info("The awswer was {0}".format(correct))
         CurrentSession.current_session[self.question.question] = correct
