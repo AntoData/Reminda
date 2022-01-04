@@ -288,6 +288,32 @@ class QuestionOneAnswerMultiple(QuestionWindowAbs):
 
 
 class QuestionTwoAnswersMultiple(QuestionWindowAbs):
+    """
+    This is a window class that display a question that only has four possible answers and only two of them is correct
+    The answers are displayed as radio buttons
+    ...
+
+    Attributes
+    ----------
+    check_boxes: [tk.Checkbutton]
+        This attribute is a list that will contain all 4 check buttons that represent the different possible answers
+
+    answer_font = tkfont.Font
+        This attribute sets the font for the four possible answers in the radio buttons
+
+    checks_done: int
+        If 1 it means we have checked 2 boxes
+
+    vars_int: [tk.IntVar]
+        This attribute is a list that contain all four observable IntVar linked to the check buttons that display
+        the four possible question
+
+    Methods
+    -------
+    checking_box(self):
+        This is the command linked to all check buttons that will check if two buttons were selected if so we will
+        disable the check buttons and display if we answered correctly or we failed the question
+    """
     def checking_box(self):
         self.checks_done = sum([v.get() for v in self.vars_int])
         self.logger.info("We have checked {0} boxes already".format(self.checks_done))
