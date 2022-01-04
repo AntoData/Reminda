@@ -14,6 +14,52 @@ from tkinter import messagebox
 
 @LoggerMeta.class_decorator_logger("INFO")
 class MainWindow(SimpleWindow):
+    """
+    This is a window class that represents the main window displayed when we start the application and the one
+    we return to
+    ...
+
+    Attributes
+    ----------
+    menu: tk.Menu
+        This attribute represents the menu displayed in this window
+
+    file_menu: tk.Menu
+        This attribute represents the File menu
+
+    label_main: tk.Label
+        This attribute is the big label that is displayed in the window
+
+    button_frame: tk.Frame
+        This attribute is a frame to place the buttons New and Load
+
+    button_font
+        This attribute sets the font for the buttons New and Load
+
+    button_new: tk.Button
+        This attribute is the button New (that starts the process to create a new questionnaire)
+
+    button_load: tk.Button
+        This attribute is the button Load (that starts the process to start answering the question in a questionnaire)
+
+    Methods
+    -------
+    button_new_handler(self):
+        This method destroy the main window and start the process to create a new questionnaire, it launches the
+        window to provide a name for the questionnaire. This is the command linked to button New
+
+    button_load_handler(self):
+        This is the command that is assigned to the button Load. It starts the process to load a questionnaire,
+        it displays the window to load the file that contains the questionnaire
+
+    config_handler(self):
+        This is the command that is assigned to the menu section Config. It displays the modal to change the
+        configuration of the application is
+
+    handler_intro_label(event=None)
+        This is the event handler that is linked to the label displaying the name of the application. Every time
+        you click there, the colour of the label changes and a message box is displayed
+    """
     def button_new_handler(self):
         self.window.destroy()
         new = CreateQuestionnaire()
@@ -30,7 +76,7 @@ class MainWindow(SimpleWindow):
         c.window.mainloop()
 
     @staticmethod
-    def handlerIntroLabel(event=None):
+    def handler_intro_label(event=None):
         r = lambda: random.randint(0, 255)
         new_colour = '#%02X%02X%02X' % (r(), r(), r())
         event.widget["bg"] = new_colour
@@ -55,7 +101,7 @@ class MainWindow(SimpleWindow):
                                              font=("Arial Baltic", "15", "bold"), bg="#1A4AC1", fg="white")
         self.label_main["padx"] = 20
         self.label_main["pady"] = 20
-        self.label_main.bind("<Button-1>", self.handlerIntroLabel)
+        self.label_main.bind("<Button-1>", self.handler_intro_label)
         self.label_main.pack()
         tk.Frame(self.window, height=20).pack()
         self.button_frame: tk.Frame = tk.Frame(self.window)
