@@ -7,6 +7,28 @@ import abc
 
 @LoggerMeta.class_decorator_logger("INFO")
 class SimpleWindow(abc.ABC, metaclass=LoggerMeta.MetaAbsLogger):
+    """
+    This is an abstract class that is the base for all our window classes
+    ...
+
+    Attributes
+    ----------
+    window: tk.Tk
+        This attribute is the window we will customize
+
+    height: int
+        This attribute is height of the window we are creating
+
+    width: int
+        This attribute is the width of the window we are creating
+
+    icon_filename: str
+        This is the path to the file that will be used as icon for these windows
+
+    Methods
+    -------
+    N/A
+    """
     @abc.abstractmethod
     def __init__(self, height: int, width: int, title: str):
         self.logger.info("We call tk.Tk()")
