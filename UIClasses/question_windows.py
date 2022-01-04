@@ -15,6 +15,52 @@ import tkinter.font as tkfont
 
 @LoggerMeta.class_decorator_logger("INFO")
 class QuestionWindowAbs(SimpleWindow, abc.ABC):
+    """
+    This is an abstract class that is the base for all our window question classes
+    ...
+
+    Attributes
+    ----------
+    menu: tk.Menu
+        This attribute is the main menu in the window
+
+    question: QuestionClass
+        This attribute is the object that contains all the information about the question we are displaying
+
+    question_label: tk.Label
+        This attribute is the label that will display the question we want the user to answer
+
+    container = ttk.Frame
+        Frame that will contain the possible answers to the question
+
+    canvas: tk.Canvas
+        This canvas is used to create a scrollable frame to display the possible questions
+
+    scrollbar: ttk.Scrollbar
+        This is the scrollbar for the scrollable frame that will contain the possible answers
+
+    scrollable_frame: ttk.Frame
+        This is the scrollable frame that will contain all the possible answers to the question
+
+    answer_font: tkfont.Font
+        This sets us the font for the different answers displayed
+
+    padding_function:
+        This attribute is a function that will return how much padding an answer has to add to fit the scrollable
+        frame
+
+    Methods
+    -------
+    go_back_to_main(self):
+        This method is the command for the option Back to main of the menu
+
+    reveal_result_labels(obj, correct: bool):
+        This static method is used to reveal if we answer the multiple choice question correctly or not and display
+        the correct label
+
+    pack_scrollable_widgets(self):
+        This method executes the geometry manager pack for all elements that build the scrollable frame
+    """
     def go_back_to_main(self):
         self.window.destroy()
         main_window.MainWindow().window.mainloop()
