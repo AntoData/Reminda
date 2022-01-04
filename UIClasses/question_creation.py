@@ -10,6 +10,131 @@ import tkinter as tk
 
 @LoggerMeta.class_decorator_logger("INFO")
 class QuestionCreation(SimpleWindow):
+    """
+    This is a window class that represents the main window displayed when we start the application and the one
+    we return to
+    ...
+
+    Attributes
+    ----------
+    exit: bool
+        This class attribute is used to stop the loop that displays the window to create questions time after time
+        when we click the button Exit
+
+    font
+        This attribute sets how the font of the question should be
+
+    check_boxes
+        This attribute is the list that will contain the checkboxes in case we display the view to add four
+        possible answers
+
+    question_label: tk.Label
+        This attribute is a label that displays the string Question above the input to fill in the question
+
+    question_text: tk.Text
+        This attribute is the input where we fill in the question
+
+    after_func
+        This attribute contains the the id of the function after that links check_button_save_question to be
+        executed every ns in the input question_text
+
+    answer_stringVar: tk.StringVar
+        This attribute is the observable String variable that will be linked to the label to display the word
+        Answer if we are in the view for a unique answers or answers in the view for multiple answers
+
+    label_answer: tk.Label
+        This attribute is the label that displays the word answer if we are displaying the view for a unique
+        answer or answers for the multiple choice view
+
+    frame
+        This attribute is the frame that will contain the inputs to fill in the possible answers to the question
+
+    first_answer: tk.Entry
+        This attribute is the input for the first/unique answer to the question
+
+    answers_stringVars: [tk.StringVar]
+        This attribute is a list that will contain all the observable StringVars that will be linked to all the
+        four inputs to provide the four possible answers to a question
+
+    but: tk.Button
+        This attribute is the button Add + that will display the view to fill in four possible answers to a question
+
+    frame2: tk.Frame
+        This attribute is the frame that will contain the button Exit, Save and Show -
+
+    button_save: tk.Button
+        This attribute is the button Save that will save a question a clean the whole form to fill in a new one
+
+    button_exit: tk.Button
+        This attribute is the button Exit that will destroy the window and display the main window again
+
+    button_less: tk.Button
+        This attribute is the button Show - that will display the view for a unique answer
+
+    check_box_var1: tk.IntVar
+        This attribute is the observable IntVar for the first check button so we can get if it is checked or not
+
+    check_box_1: tk.Checkbutton
+        This attribute is the check button for the first answer
+
+    answers: [tk.Entry]
+        This attribute will contain all the inputs to fill in answers in the view for four possible answers
+
+    intVars: [tk.IntVar]
+        This attribute will contain all the observable IntVar that will be linked to the check buttons next
+        to the inputs for each answer so we can see if they were checked or not
+
+    question_result: QuestionClass
+        This is the attribute in which we will save the question created in this window
+
+    Methods
+    -------
+    question_filled(self):
+        This method returns True if the question has been filled properly. A question is properly field if
+        it has at least one character different from whitespaces
+
+    all_answers_filled_in(self):
+        This method checks if all questions are filled and if they are we enable the checkboxes to select
+        which questions are true and if it is one of the variables we check to enable the button Save
+
+    check_correct_number_checked(self):
+        This method checks if we have checked one or two answers as correct to enable the button Save (one
+        of the variables that we check for that)
+
+    single_answer_display(self):
+        This method displays the view for just one possible answer
+
+    answers_entry_command(self, *args):
+        This method is a trace added to the observable StringVar linked to the Entry inputs to fill in the possible
+        answers. Every time we type something it checks all the variables need to enable or disable the button Save
+
+    check_boxes_validation(self):
+        This method is the command linked to every check button that will check if every variable to enable the button
+        Save is true or disable it if not
+
+    add_more(self):
+        This method is the command linked to the button Add + that will display the view for four possible answers
+
+    show_less_handler(self):
+        This method is the command linked to the button Show - that will display the view for just one possible
+        answer back
+
+    check_button_save_question(self):
+        This method is a method added as an after method to the button Save that checks every ns if the button
+        Save can be enable or have to be disabled
+
+    gather_answers(self):
+        This method is executed after clicking the button Save to get all the questions that were filled in to create
+        an object that represents the question
+
+    button_save_handler(self):
+        This method is the command linked to the button Save. Once we click the button Save, we create an object
+        that represents the question and destroy the window
+
+    button_exit_handler(self):
+        This method is the command linked to the button Exit. When we click the button Exit the current window
+        is destroyed (the question is not saved) and the loop to keep creating new question is stopped
+    """
     exit: bool = False
 
     def question_filled(self):
