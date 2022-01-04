@@ -9,6 +9,23 @@ from question_creation import QuestionCreation
 
 @LoggerMeta.class_decorator_logger("INFO")
 class QuestionCreationHandler(metaclass=LoggerMeta.MetaLogger):
+    """
+    This class is used for the loop in which we create the questions to compose a questionnaire until we click
+    the button Exit
+    ...
+
+    Attributes
+    ----------
+    questionnaire: QuestionnaireClass
+        This attribute is the questionnaire we are creating
+
+    question_creation_window: QuestionCreation
+        This attribute is the window we display to create a new question for the questionnaire
+
+    Methods
+    -------
+    N/A
+    """
     window_question_object = None
 
     def __init__(self, filename: str):
