@@ -12,6 +12,35 @@ from execution_summary import ExecutionSummary
 
 @LoggerMeta.class_decorator_logger("INFO")
 class QuestionnaireWindowHandler(metaclass=LoggerMeta.MetaLogger):
+    """
+    This class handles the loop that displays the windows to answer the questions that compose a questionnaire
+    after we loaded one from a file
+    ...
+
+    Attributes
+    ----------
+    window_question_object
+        This class attribute will contain the window that displays the current question to be answered
+
+    filename: str
+        Name of the file we want to load
+
+    questionnaire: QuestionnaireClass
+        This attribute is object that contains the questionnaire loaded from the file whose name is contained in
+        the attribute above
+
+    secs_to_answer: int
+        This attribute is the number of seconds to answer a question
+
+    icon_filename: str
+        This is the path to the file that will be used as icon for these windows
+
+    Methods
+    -------
+    handler_question_windows(cls):
+        This method destroys the current window and sleep the application for the number of seconds set between
+        question
+    """
     window_question_object = None
 
     @classmethod
@@ -44,8 +73,9 @@ class QuestionnaireWindowHandler(metaclass=LoggerMeta.MetaLogger):
                 self.logger.info("Question {0} is type 2".format(i))
                 QuestionnaireWindowHandler.window_question_object = question_windows.QuestionTwoAnswersMultiple(question, i)
                 self.logger.info("Created window from class QuestionTwoAnswersMultiple")
-            QuestionnaireWindowHandler.window_question_object.func_after = QuestionnaireWindowHandler.window_question_object.window.after(
-                self.secs_to_answer * 1000, QuestionnaireWindowHandler.window_question_object.window.destroy)
+            QuestionnaireWindowHandler.window_question_object.func_after = QuestionnaireWindowHandler.\
+                window_question_object.window.after(self.secs_to_answer * 1000, QuestionnaireWindowHandler.
+                                                    window_question_object.window.destroy)
             self.logger.info("We set the window to be destroyed after {0} seconds using after".format(
                 self.secs_to_answer))
             QuestionnaireWindowHandler.window_question_object.window.lift()
