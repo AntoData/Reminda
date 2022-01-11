@@ -48,7 +48,7 @@ class ConfigClass(metaclass=LoggerMeta.MetaLogger):
         try:
             config_file_static = shelve.open(config_filename, "r")
         except Exception:
-            config_filename: str = "{0}/config.cfg".format(".")
+            config_filename: str = "{0}/config.cfg".format("..")
             config_file_static = shelve.open(config_filename, "r")
         LoggerMeta.MetaLogger.logger.info("{0}, exists so we will read it".format(config_filename))
         secs_to_answer: int = config_file_static["secs_to_answer"]

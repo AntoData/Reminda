@@ -1,4 +1,5 @@
 import sys
+
 sys.path.append("../BE-Logic")
 sys.path.append("../Config")
 import LoggerMeta
@@ -41,20 +42,26 @@ class LoadQuestionnaire(SimpleWindow):
         This is the command that is assigned to the button Load. It loads the file selected, creating a questionnaire
         and start the loop that goes through all the questions in that questionnaire
     """
+
     def exit_button_handler(self):
         self.window.destroy()
         main_window.MainWindow().window.mainloop()
 
     def command(self):
-        filename: str = self.combo.get().replace(".pickle","")
+        filename: str = self.combo.get().replace(".pickle", "")
         self.window.destroy()
         q = question_windows_handler.QuestionnaireWindowHandler(filename)
 
     def __init__(self):
         SimpleWindow.__init__(self, 60, 150, "New Window")
-        self.project_folder: str = "{0}/Data/Questionnaires".format(LoggerMeta.MetaLogger.get_root())
-        self.dirs = [item for item in os.listdir(self.project_folder)
-                     if not os.path.isdir(self.project_folder + "/" + item)]
+        try:
+            self.project_folder: str = "{0}/Data/Questionnaires".format(".")
+            self.dirs = [item for item in os.listdir(self.project_folder)
+                         if not os.path.isdir(self.project_folder + "/" + item)]
+        except FileNotFoundError:
+            self.project_folder: str = "{0}/Data/Questionnaires".format("..")
+            self.dirs = [item for item in os.listdir(self.project_folder)
+                         if not os.path.isdir(self.project_folder + "/" + item)]
         self.window.protocol("WM_DELETE_WINDOW", self.exit_button_handler)
         self.combo = ttk.Combobox(self.window, values=self.dirs)
         self.combo.set("Pick an Option")

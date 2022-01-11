@@ -37,12 +37,16 @@ class SimpleWindow(abc.ABC, metaclass=LoggerMeta.MetaAbsLogger):
         self.height: int = height
         self.width: int = width
         self.window.geometry("{0}x{1}".format(width, height))
-        self.icon_filename = "{0}/Config/icon.png".format(LoggerMeta.MetaAbsLogger.get_root())
+        self.icon_filename = "{0}/Config/icon.png".format("./")
         self.window.resizable(width=False, height=False)
         try:
             self.window.tk.call("wm", "iconphoto", self.window._w, tk.PhotoImage(file=self.icon_filename))
         except Exception as e:
-            self.logger.warning("We could not customize the application icon: {0}".format(e))
+            try:
+                self.icon_filename = "{0}/Config/icon.png".format("../")
+                self.window.tk.call("wm", "iconphoto", self.window._w, tk.PhotoImage(file=self.icon_filename))
+            except Exception as f:
+                self.logger.warning("We could not customize the application icon: {0}".format(f))
 
 
 if __name__ == "__main__":
