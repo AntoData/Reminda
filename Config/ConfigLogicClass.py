@@ -43,9 +43,13 @@ class ConfigClass(metaclass=LoggerMeta.MetaLogger):
     get_secs_between_questions(cls) -> int:
         This class method returns the number of seconds the application will be sleeping between questions
     """
-    config_filename: str = "{0}/Config/config.cfg".format(LoggerMeta.MetaLogger.get_root())
     try:
-        config_file_static = shelve.open(config_filename, "r")
+        config_filename: str = "{0}/Config/config.cfg".format(".")
+        try:
+            config_file_static = shelve.open(config_filename, "r")
+        except Exception:
+            config_filename: str = "{0}/config.cfg".format(".")
+            config_file_static = shelve.open(config_filename, "r")
         LoggerMeta.MetaLogger.logger.info("{0}, exists so we will read it".format(config_filename))
         secs_to_answer: int = config_file_static["secs_to_answer"]
         secs_between_questions: int = config_file_static["secs_between_questions"]
