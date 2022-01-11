@@ -137,8 +137,12 @@ class QuestionnaireClass(metaclass=LoggerMeta.MetaLogger):
             raise pickle.PickleError from e
 
     def save_questionnaire(self):
-        path: str = LoggerMeta.MetaLogger.get_root() + "/Data/Questionnaires/{0}.pickle".format(self.__name)
-        self.save_as_file(path)
+        try:
+            path: str = "." + "/Data/Questionnaires/{0}.pickle".format(self.__name)
+            self.save_as_file(path)
+        except (FileNotFoundError, pickle.PickleError):
+            path: str = ".." + "/Data/Questionnaires/{0}.pickle".format(self.__name)
+            self.save_as_file(path)
 
     @staticmethod
     def load_from_file(file_path: str):
@@ -154,9 +158,13 @@ class QuestionnaireClass(metaclass=LoggerMeta.MetaLogger):
 
     @staticmethod
     def load_questionnaire(name: str):
-        path: str = LoggerMeta.MetaLogger.get_root() + "/Data/Questionnaires/{0}.pickle".format(name)
-        print(path)
-        return QuestionnaireClass.load_from_file(path)
+        try:
+            path: str = "." + "/Data/Questionnaires/{0}.pickle".format(name)
+            q = QuestionnaireClass.load_from_file(path)
+        except (FileNotFoundError, pickle.PickleError):
+            path: str = ".." + "/Data/Questionnaires/{0}.pickle".format(name)
+            q = QuestionnaireClass.load_from_file(path)
+        return q
 
 
 if __name__ == "__main__":

@@ -41,12 +41,20 @@ class MetaAbsLogger(abc.ABCMeta):
         if MetaAbsLogger.logger is None:
             MetaAbsLogger.logger_starter = True
             now = datetime.now()
-            filename: str = now.strftime("%Y-%m-%d_%H-%M-%S")
-            filename = "{0}/Logs/{1}".format(MetaAbsLogger.get_root(), filename)
-            logging.basicConfig(format='%(asctime)s,%(msecs)d %(name)s %(levelname)s %(message)s',
-                                filename="{0}.log".format(filename),
-                                datefmt='%H:%M:%S',
-                                level=logging.INFO)
+            filename_date: str = now.strftime("%Y-%m-%d_%H-%M-%S")
+            try:
+                filename = "{0}/Logs/{1}".format("./", filename_date)
+                logging.basicConfig(format='%(asctime)s,%(msecs)d %(name)s %(levelname)s %(message)s',
+                                    filename="{0}.log".format(filename),
+                                    datefmt='%H:%M:%S',
+                                    level=logging.INFO)
+            except FileNotFoundError:
+                filename = "{0}/Logs/{1}".format("../", filename_date)
+                logging.basicConfig(format='%(asctime)s,%(msecs)d %(name)s %(levelname)s %(message)s',
+                                    filename="{0}.log".format(filename),
+                                    datefmt='%H:%M:%S',
+                                    level=logging.INFO)
+
             MetaAbsLogger.logger = logging.getLogger(str(filename))
             MetaAbsLogger.logger.info("Log has been created and started")
         obj.logger = MetaAbsLogger.logger
