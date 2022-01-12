@@ -106,7 +106,8 @@ class CreateQuestionnaire(SimpleWindow):
         self.frame1.pack(anchor=tk.CENTER)
         self.logger.info("We create an Entry for the filename with a StringVar and two traces in mode w "
                          "validate_input_name and valid_filename and place it")
-        self.input_text_var: tk.StringVar = tk.StringVar("")
+        self.input_text_var: tk.StringVar = tk.StringVar()
+        self.input_text_var.set("")
         self.input_text_var.trace("w", self.validate_input_name)
         self.input_text_var.trace("w", self.valid_filename)
         self.name_input: tk.Entry = tk.Entry(self.frame1, width=25, textvariable=self.input_text_var)

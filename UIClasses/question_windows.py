@@ -267,7 +267,8 @@ class QuestionOneAnswerMultiple(QuestionWindowAbs):
         QuestionWindowAbs.__init__(self, question, i, 600, 550)
         self.radio_buttons = []
         self.logger.info("We created the IntVar for the group of radio buttons")
-        self.answer_group: tk.IntVar = tk.IntVar(0)
+        self.answer_group: tk.IntVar = tk.IntVar()
+        self.answer_group.set(0)
         self.logger.info("Our font is size 12")
         self.answer_font = tkfont.Font(family="TkDefaultFont", size=12)
         i: int = 0
